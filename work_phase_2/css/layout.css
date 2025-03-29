@@ -1,0 +1,23 @@
+/* CSS Variables to Define Colour Scheme */
+:root {
+    --primary-color: #2c3e50;       /* Dark Blue */
+    --secondary-color: #3498db;     /* Bright Blue */
+    --accent-color: #e74c3c;        /* Red */
+    --text-color: #333;             /* Dark Grey */
+    --background-color: #f5f5f5;    /* Light Grey */
+  }
+  body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+.container {
+    height: 100vh;
+    width: 80vw;
+    margin: 0 auto;
+    background-color:rgb(255, 255, 255);
+}
+@media (min-width: 768px) {
+    .container{
+        width: 60vw;
+    }
+}

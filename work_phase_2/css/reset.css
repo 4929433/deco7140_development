@@ -1,0 +1,89 @@
+/* reset.css */
+
+/* 1. 通用基础重置 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  animation: none !important;
+  transition: none !important;
+  outline: none;
+}
+
+/* 2. HTML5 元素显示为块级 */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+/* 3. 文本设置统一 */
+html, body {
+  height: 100%;
+  line-height: 1;
+  font-family: sans-serif;
+  background: transparent;
+  color: inherit;
+  scroll-behavior: auto;
+}
+
+/* 4. 列表清除样式 */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* 5. 链接清除样式 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 6. 表格清除间距 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 7. 图片、视频等媒体元素清除默认对齐 */
+img, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 8. 表单元素重置 */
+input, button, textarea, select {
+  appearance: none;
+  background: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* 9. 清除动画、过渡和滚动行为 */
+html *, html *::before, html *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* 10. 禁用用户选择（可选） */
+/* body {
+  user-select: none;
+} */
+
+/* 11. 去除按钮点击样式（可选） */
+button:focus, input:focus, textarea:focus {
+  outline: none;
+}
+
+/* 12. 禁用所有 CSS 自定义滚动条（可选） */
+/* ::-webkit-scrollbar {
+  display: none;
+} */
