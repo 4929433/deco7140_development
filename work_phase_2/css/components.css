@@ -11,7 +11,8 @@
 /* MENU (Mobile First) */
 .menu {
     list-style: none;
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     flex-direction: column;
     background-color: var(--primary-color);
     width: 100%;
@@ -49,17 +50,115 @@
 /* DESKTOP VIEW */
 @media (min-width: 768px) {
     .menu {
-        display: flex; /* Visible by default on larger screens */
+        display: flex;
+        /* Visible by default on larger screens */
         position: static;
         flex-direction: row;
     }
 
     .menu-toggle {
-        display: none; /* Hide toggle button on larger screens */
+        display: none;
+        /* Hide toggle button on larger screens */
     }
 
     .menu li {
         padding: 0 15px;
     }
 }
-   
+
+/* 每个访谈块整体样式 */
+.interview {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 用户名强调 */
+.user-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* 初始 prompt 强调 */
+.initial-prompt {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+/* 提问内容加粗 */
+.question {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+/* 回答内容整体缩进并留白 */
+.response {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* 用户故事样式 */
+.user-story {
+    background-color: #f9f9f9;
+    border-left: 4px solid #56c2f0;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* QA 问答块样式 */
+.interview-qa {
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #eef6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-style: italic;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: none;
+}
+
+.tooltip.show {
+    display: block;
+}
+
+.tooltip .label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.tooltip-trigger {
+    position: relative;
+    cursor: help;
+}
+
+.interview ul li::marker {
+    content: "🥕";
+    font-size: 1.2em;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+.question {
+    background-color: #fff9c4; /* 浅黄色背景 */
+    padding: 0.5rem 0.75rem;
+    border-left: 4px solid #fbc02d; /* 深黄强调线 */
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
