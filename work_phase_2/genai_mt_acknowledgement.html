@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <head>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+        </head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -9,20 +13,30 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-
-        <title>Work Phase 2</title>
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <header>
-            <h1>Pete's Work Phase 2</h1>
-        </header>
-        <section>
-            <h2>What's in this website?</h2>
-            <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
-            </p>
-        </section>
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ≡
+            </button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client_needs_analysis.html">Client Needs</a></li>
+                <li><a href="user_stories.html">User Stories</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <a href="ethics.html">Ethics</a></li>
+                <li><a href="/work_phase_2/genai_mt_acknowledgement.html">GenAi_Acknowledgement</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <main id="genai">
+            <!-- JavaScript -->
+            </main>
+        </div>
+        <!-- JavaScript -->
+        <script type="module" src="js/genai_mt_acknowledgement.js"></script>
+        
     </body>
-</html>          
+</html>

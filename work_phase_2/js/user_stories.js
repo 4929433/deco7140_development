@@ -58,7 +58,7 @@ const userStories = [
     },
 ];
 
-// 渲染到页面
+//page
 const main = document.querySelector("main");
 main.innerHTML = "";
 
@@ -78,7 +78,7 @@ userStories.forEach((storyData, index) => {
     main.appendChild(section);
 });
 
-// 悬停交互逻辑：显示对应的 tooltip
+//tooltip
 document.querySelectorAll(".tooltip-trigger").forEach((trigger) => {
     const index = trigger.dataset.index;
     const tooltip = document.getElementById(`tooltip-${index}`);

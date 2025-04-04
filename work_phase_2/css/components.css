@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+}
+
 /* NAVBAR */
 .navbar {
     background-color: var(--primary-color);
@@ -12,7 +17,6 @@
 .menu {
     list-style: none;
     display: none;
-    /* Hidden by default */
     flex-direction: column;
     background-color: var(--primary-color);
     width: 100%;
@@ -33,7 +37,6 @@
     padding: 10px;
 }
 
-/* MENU TOGGLE BUTTON */
 .menu-toggle {
     background: none;
     border: none;
@@ -42,23 +45,19 @@
     cursor: pointer;
 }
 
-/* SHOW MENU WHEN TOGGLED */
 .menu.show {
     display: flex;
 }
 
-/* DESKTOP VIEW */
 @media (min-width: 768px) {
     .menu {
         display: flex;
-        /* Visible by default on larger screens */
         position: static;
         flex-direction: row;
     }
 
     .menu-toggle {
         display: none;
-        /* Hide toggle button on larger screens */
     }
 
     .menu li {
@@ -66,7 +65,7 @@
     }
 }
 
-/* 每个访谈块整体样式 */
+/* Interview Block */
 .interview {
     background-color: #fdfdfd;
     border: 1px solid #ddd;
@@ -76,7 +75,6 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* 用户名强调 */
 .user-name {
     font-size: 1.1rem;
     font-weight: bold;
@@ -84,27 +82,28 @@
     margin-bottom: 0.5rem;
 }
 
-/* 初始 prompt 强调 */
 .initial-prompt {
     font-style: italic;
     color: #666;
     margin-bottom: 0.25rem;
 }
 
-/* 提问内容加粗 */
 .question {
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    background-color: #fff9c4;
+    padding: 0.5rem 0.75rem;
+    border-left: 4px solid #fbc02d;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-/* 回答内容整体缩进并留白 */
 .response {
     margin-left: 1rem;
     margin-bottom: 1rem;
     line-height: 1.6;
 }
 
-/* 用户故事样式 */
 .user-story {
     background-color: #f9f9f9;
     border-left: 4px solid #56c2f0;
@@ -112,7 +111,6 @@
     margin-top: 1rem;
 }
 
-/* QA 问答块样式 */
 .interview-qa {
     border-top: 1px solid #eee;
     margin-top: 1rem;
@@ -153,12 +151,108 @@
     display: inline-block;
     margin-right: 0.5em;
 }
-.question {
-    background-color: #fff9c4; /* 浅黄色背景 */
-    padding: 0.5rem 0.75rem;
-    border-left: 4px solid #fbc02d; /* 深黄强调线 */
-    border-radius: 4px;
+
+/* Interactive Highlight */
+.interactive-highlight {
+    position: relative;
+    background-color: rgba(255, 215, 0, 0.3);
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.interactive-highlight::after {
+    content: attr(data-card);
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.8rem;
     font-weight: bold;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@media (hover: hover) {
+    .interactive-highlight:hover::after {
+        opacity: 1;
+    }
+}
+
+.interactive-highlight:focus::after,
+.interactive-highlight:active::after {
+    opacity: 1;
+}
+
+/* Flip Cards - Grid Container */
+.flip-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .flip-card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Flip Card Styles */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 220px;
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+/* Flip on hover (desktop) */
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    color: white;
+}
+
+.flip-card-front {
+    background-color: var(--primary-color);
+}
+
+.flip-card-back {
+    background-color: var(--secondary-color);
 }

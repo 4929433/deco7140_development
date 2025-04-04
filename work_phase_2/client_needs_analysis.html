@@ -3,26 +3,380 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Client Needs Analysis</title>
 
-        <!-- CSS Linking -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="/work_phase_2/css/style.css" />
+        <style>
+            .flip-card-inner.flipped {
+                transform: rotateY(180deg);
+            }
+        </style>
+        <style>
+            :root {
+                --primary-color: #2c3e50;
+                --secondary-color: #3498db;
+            }
 
-        <title>Work Phase 2</title>
+            h2 {
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .value-box {
+                border: 1px solid #00aaff;
+                border-radius: 12px;
+                padding: 30px 20px;
+                margin-bottom: 40px;
+                background-color: white;
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .value-box h3 {
+                text-align: center;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .flip-card-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .flip-card {
+                background-color: transparent;
+                width: 100%;
+                max-width: 220px;
+                height: 180px;
+                perspective: 1000px;
+                cursor: pointer;
+            }
+
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+            }
+
+            .flip-card:hover .flip-card-inner,
+            .flip-card-inner.flipped {
+                transform: rotateY(180deg);
+            }
+
+            .flip-card-front,
+            .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 1rem;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .flip-card-front {
+                background: var(--primary-color);
+                color: white;
+            }
+
+            .flip-card-back {
+                background: var(--secondary-color);
+                color: white;
+                transform: rotateY(180deg);
+            }
+        </style>
     </head>
+
     <body>
-        <header>
-            <h1>Pete's Work Phase 2</h1>
-        </header>
-        <section>
-            <h2>What's in this website?</h2>
-            <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
-            </p>
-        </section>
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                &#8801;
+            </button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client_needs_analysis.html">Client Needs</a></li>
+                <li><a href="user_stories.html">User Stories</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="ethics.html">ethics</a></li>
+                <li>
+                    <a href="/work_phase_2/genai_mt_acknowledgement.html"
+                        >GenAi_Acknowledgement</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <header>
+                <h1>Client Needs Analysis</h1>
+            </header>
+
+            <section>
+                <h3>About Us</h3>
+                <p>
+                    We are a non-profit organisation dedicated to fostering
+                    <span class="interactive-highlight" data-card="Value 2"
+                        >social cohesion</span
+                    >
+                    by empowering diverse communities to share their stories,
+                    connect with others, and access resources that enhance their
+                    visibility and influence. Our mission is to strengthen
+                    societal bonds by creating platforms that celebrate and
+                    support the unique identities of communities across
+                    Australia.
+                </p>
+                <p>
+                    This brief has been prepared for the internal design teams
+                    at Connect Communities Initiative (CCI). Each design team is
+                    tasked with developing individual concepts and prototypes
+                    for dynamic websites that align with CCI’s mission and
+                    vision. Our mission is to strengthen societal bonds by
+                    creating platforms that celebrate and support the unique
+                    identities of communities across Australia.
+                </p>
+                <h3>Project Overview</h3>
+                <p>
+                    We are commissioning the development of dynamic,
+                    user-friendly websites that represent and support different
+                    communities. Each website should serve as a
+                    <span class="interactive-highlight" data-card="Value 1"
+                        >central hub where community members can share
+                        resources</span
+                    >, highlight events, and
+                    <span class="interactive-highlight" data-card="Value 2"
+                        >foster meaningful connections</span
+                    >. The websites must not include any form of commercial
+                    activity , such as advertising or selling products. However,
+                    it is acceptable to
+                    <span class="interactive-highlight" data-card="Value 3"
+                        >promote resources, events, or services that are
+                        directly beneficial to the community</span
+                    >.
+                </p>
+                <p>
+                    The websites must be accessible, mobile-friendly, and
+                    reflect the diverse needs of the selected community focus
+                    area while adhering to our mission of inclusivity,
+                    accessibility, and ethical design. Each website should also
+                    celebrate the unique characteristics of its chosen community
+                    and support meaningful interaction and engagement.
+                </p>
+                <h3>Community Focus Areas</h3>
+                <ul>
+                    <li>Cultural and Heritage Communities</li>
+                    <li>Academic and Professional Communities</li>
+                    <li>Wellness and Mental Health Communities</li>
+                    <li>Social and Environmental Advocacy Communities</li>
+                    <li>Regional or International Communities</li>
+                    <li>Creative Arts and Media Communities</li>
+                    <li>Lived Experience Communities</li>
+                    <li>Food and Culinary Communities</li>
+                    <li>Tech and Innovation Communities</li>
+                </ul>
+                <h3>Additional Information</h3>
+                <p><strong>Target Audience</strong></p>
+                <p>Each website must serve two key groups:</p>
+                <ol>
+                    <li>
+                        Community Members: Individuals within the selected
+                        community who seek representation, resources, and
+                        connection.
+                    </li>
+                    <li>
+                        General Audience: Broader society, who can use the
+                        website to learn about the community and its
+                        contributions.
+                    </li>
+                </ol>
+                <p>
+                    Accessibility must be prioritised to ensure seamless
+                    interaction for all users, including those relying on
+                    assistive technologies.
+                </p>
+                <p><strong>Project Goals</strong></p>
+                <ol>
+                    <li>
+                        Represent and celebrate the identity of the chosen
+                        community, recognising and representing the diversity
+                        within the community rather than relying on stereotypes.
+                    </li>
+                    <li>
+                        <span class="interactive-highlight" data-card="Value 1"
+                            >Provide clear, accessible information and resources
+                            to users.</span
+                        >
+                    </li>
+                    <li>
+                        <span class="interactive-highlight" data-card="Value2"
+                            >Foster meaningful connections and support within
+                            the community</span
+                        >.
+                    </li>
+                    <li>
+                        Ensure ethical, inclusive, and culturally sensitive
+                        design principles are upheld.
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Values – Needs – Features Analysis</h2>
+
+                <!-- Value 1 -->
+                <div class="value-box">
+                    <h3>Value 1: Efficient Information Access</h3>
+                    <div class="flip-card-row">
+                        <!-- Need -->
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>Need</h4>
+                                    <p>Users need a quick way to find games.</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>
+                                        Search bar improves game access speed.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature -->
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>Feature</h4>
+                                    <p>
+                                        Smart search bar with filters and
+                                        keyword support.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>
+                                        Speeds up game lookup with more control.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="value-box">
+                    <h3>Value 2: Community Engagement & Expression</h3>
+                    <div class="flip-card-row">
+                        <!-- Need -->
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>Need</h4>
+                                    <p>
+                                        Users want to share opinions and
+                                        interact.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>
+                                        Enables social bonding and feedback
+                                        exchange.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature -->
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>Feature</h4>
+                                    <p>
+                                        Comment system, upvotes, and discussion
+                                        threads.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>
+                                        Creates community-driven content and
+                                        interaction.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="value-box">
+                    <h3>Value 3: Game Discovery & Recommendations</h3>
+                    <div class="flip-card-row">
+                        <!-- Need -->
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>Need</h4>
+                                    <p>
+                                        Users want to find new, relevant games
+                                        easily.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>
+                                        Helps users explore games they might
+                                        otherwise miss.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature -->
+                        <div class="flip-card" tabindex="0">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h4>Feature</h4>
+                                    <p>
+                                        “You may also like” suggestions and
+                                        popular game lists.
+                                    </p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>
+                                        Drives discovery through curated and
+                                        user-influenced content.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            document.querySelectorAll(".flip-card").forEach((card) => {
+                card.addEventListener("click", () => {
+                    card.querySelector(".flip-card-inner").classList.toggle(
+                        "flipped"
+                    );
+                });
+            });
+        </script>
     </body>
-</html>          
+</html>

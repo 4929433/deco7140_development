@@ -73,17 +73,3 @@ html *, html *::before, html *::after {
   scroll-behavior: auto !important;
 }
 
-/* 10. 禁用用户选择（可选） */
-/* body {
-  user-select: none;
-} */
-
-/* 11. 去除按钮点击样式（可选） */
-button:focus, input:focus, textarea:focus {
-  outline: none;
-}
-
-/* 12. 禁用所有 CSS 自定义滚动条（可选） */
-/* ::-webkit-scrollbar {
-  display: none;
-} */
