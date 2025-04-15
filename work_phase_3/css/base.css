@@ -28,7 +28,7 @@ h2,
 h3 {
     font-family: 'Bebas Neue', sans-serif;
     text-transform: uppercase;
-    color：var(--text-color);
+    color:var(--text-color);
 }
 
 h1 {

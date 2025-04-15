@@ -1,21 +1,88 @@
-/* MENUS */
-/* 默认状态：移动端显示，桌面端隐藏 */
+/* Emoji 图标样式 */
+.icon {
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* ✅ 默认：移动菜单显示，桌面菜单隐藏 */
 #nav-mobile {
-    display: block;
-  }
-  
-  #nav-desktop {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: var(--secondary-color);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+#nav-mobile ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-mobile a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 0.4rem;
+}
+
+/* ✅ 默认隐藏桌面菜单 */
+/* 顶部导航栏样式 */
+#nav-desktop {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#nav-desktop ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+#nav-desktop a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 微交互悬停效果 */
+#nav-desktop a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+
+/* ✅ 桌面端切换：显示 desktop，隐藏 mobile */
+@media screen and (min-width: 768px) {
+  #nav-mobile {
     display: none;
   }
-  
-  /* 响应式控制：桌面端显示 desktop 菜单，隐藏 mobile 菜单 */
-  @media screen and (min-width: 768px) {
-    #nav-desktop {
-      display: block;
-    }
-  
-    #nav-mobile {
-      display: none;
-    }
+
+  #nav-desktop {
+    display: block;
   }
-  
+}
+
+/* Remember - media query should be below here */
+                                                                          

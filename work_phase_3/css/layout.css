@@ -11,6 +11,10 @@
       width: 70vw;
     }
   }
+main,
+.container {
+  padding-top: 80px; /* 或更大的值，根据导航栏高度 */
+}
   
 a {
     color: var(--accent-color);
@@ -64,4 +68,3 @@ button {
   button:hover {
     background-color: #5aa8dd;
   }
-  
