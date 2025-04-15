@@ -10,7 +10,6 @@
   border: 0;
   font: inherit;
   vertical-align: baseline;
-  animation: none !important;
   transition: none !important;
   outline: none;
 }
@@ -66,10 +65,4 @@ input, button, textarea, select {
   color: inherit;
 }
 
-/* 9. 清除动画、过渡和滚动行为 */
-html *, html *::before, html *::after {
-  animation: none !important;
-  transition: none !important;
-  scroll-behavior: auto !important;
-}
 

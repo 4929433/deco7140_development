@@ -1,0 +1,69 @@
+:root {
+    --primary-color: #1b2838;
+    --secondary-color: #2a475e;
+    --accent-color: #66c0f4;
+    --text-color: #ffffff;
+    --background-color: #0e1c2f;
+    --danger-color: #c94c4c;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* 正文字体 */
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* 标题字体 */
+h1,
+h2,
+h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    color：var(--text-color);
+}
+
+h1 {
+    font-size: 4.2rem;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,21 @@
+/* MENUS */
+/* 默认状态：移动端显示，桌面端隐藏 */
+#nav-mobile {
+    display: block;
+  }
+  
+  #nav-desktop {
+    display: none;
+  }
+  
+  /* 响应式控制：桌面端显示 desktop 菜单，隐藏 mobile 菜单 */
+  @media screen and (min-width: 768px) {
+    #nav-desktop {
+      display: block;
+    }
+  
+    #nav-mobile {
+      display: none;
+    }
+  }
+  
