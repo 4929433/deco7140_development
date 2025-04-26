@@ -13,7 +13,7 @@
   }
 main,
 .container {
-  padding-top: 80px; /* 或更大的值，根据导航栏高度 */
+  padding-top: 80px; 
 }
   
 a {
@@ -38,12 +38,11 @@ a {
   button:hover {
     background-color: #5aa8dd;
   }
-/* 帮助类：通用间距 */
+
 .mt-2 { margin-top: 2rem; }
 .mb-2 { margin-bottom: 2rem; }
 .p-2 { padding: 2rem; }
 
-/* 提示框样式 */
 .helper-box {
   background-color: var(--secondary-color);
   color: #ffffff;
