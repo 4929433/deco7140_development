@@ -1,0 +1,61 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.gallery img {
+    width: 60%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+@media screen and (min-width: 768px) {
+    .gallery img {
+        width: 100%;
+        height: 300px;
+    }
+}
+/* 让 .gallery 溢出可见，以便放大时能超出格子 */
+.gallery {
+    overflow: visible;
+  }
+  
+  /* 每张图片的小卡片样式 */
+  .gallery img {
+    width: 100%;              /* 占满格子宽度 */
+    height: 200px;            /* 固定高度 */
+    object-fit: cover;        /* 裁剪填充 */
+    object-position: center;  /* 居中裁剪 */
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+      transform 0.3s ease,
+      object-fit 0.3s ease;
+    position: relative;
+    z-index: 1;
+    transform-origin: center center;
+  }
+  
+  /* 平板 / 桌面稍高一点 */
+  @media screen and (min-width: 768px) {
+    .gallery img {
+      height: 300px;
+    }
+  }
+  
+  /* 悬停时放大并显示完整图片 */
+  .gallery img:hover {
+    transform: scale(2.5);      /* 放大到两倍（可根据需要再调大或小） */
+    object-fit: contain;      /* 切换到完整显示 */
+    z-index: 10;              /* 提升到最上层 */
+  }
+  

@@ -1,0 +1,88 @@
+@import url(/work_phase_3/css/component_skeletons/gallery.css);
+@import url(/work_phase_3/css/component_skeletons/vierwer.css);
+.back-link {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .back-link a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .back-link a:hover {
+    opacity: .9;
+  }
+  .back-link {
+    position: fixed;
+    top: 1rem;   /* 距离视口顶部 1rem */
+    left: 1rem;  /* 距离视口左侧 1rem */
+    z-index: 1000;
+  }
+main {
+    text-align: center;
+  }
+  .back-link {
+    text-align: left;
+    margin-bottom: 1rem; 
+  }
+  .container,
+  .container h1,
+  .container p,
+  article,
+  article h2 {
+    text-align: center;
+  }
+/* —— 隐藏 BrowserSync 注入的按钮和父容器 —— */
+div[id^="browser-sync-wrapper"],
+button[id^="browser-sync-close"],
+div[id^="__browser_sync__"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* —— 隐藏 LiveReload 脚本注入的任何 UI —— */
+iframe#livereload,
+script[src*="livereload.js"],
+div.livereload {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+/* 大图查看器图片样式 */
+#viewer-img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .color-swatch {
+    flex: 1 1 200px;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  .typography-rules {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  .typography-rules li {
+    margin-bottom: 0.5rem;
+  }
+  

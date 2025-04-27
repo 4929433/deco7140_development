@@ -1,3 +1,5 @@
+// js/modules/accordion.js
+
 /**
  * 初始化手风琴折叠面板
  * @param {string} containerSelector - 折叠面板容器的选择器，比如 '.accordion'
@@ -14,8 +16,6 @@ function initAccordion(containerSelector) {
     });
   }
   
-  // 页面 DOM Ready 后自动初始化
-  document.addEventListener('DOMContentLoaded', () => {
-    initAccordion('.accordion');
-  });
+  // 导出函数给其他js文件使用
+  export { initAccordion };
   

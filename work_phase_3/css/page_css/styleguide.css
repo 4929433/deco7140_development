@@ -1,0 +1,41 @@
+/* 卡片外层容器：水平排列、可换行、居中 */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;        /* 卡片之间空隙 */
+    padding: 2rem 0;
+  }
+  
+  /* 每个卡片固定宽度，高度自适应，统一阴影和圆角 */
+  .card {
+    width: 300px;          /* 你想要的卡片宽度 */
+    background: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 卡片内图片按卡片宽度拉伸，高度自适应 */
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* 卡片正文部分 */
+  .card-content {
+    padding: 1rem;
+    color: var(--text-color);
+    flex: 1;              /* 占据剩余空间，保证按钮贴底 */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 按钮总在最下方 */
+  .card-content button {
+    margin-top: auto;     /* 把按钮推到容器底部 */
+  }
+  
