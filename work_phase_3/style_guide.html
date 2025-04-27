@@ -1,46 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <body>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/components.css" />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="/work_phase_3/assets/favicon_io/favicon-16x16.png"
-        />
-        <title>Work Phase 3</title>
-        <nav id="nav-mobile" aria-label="Main Navigation">
-            <ul>
-              <li><a href="index.html"><span class="icon">🏠</span></a></li>
-              <li><a href="site_map.html"><span class="icon">🗺</span></a></li>
-              <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
-              <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
-              <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
-            </ul>
-          </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Style Guide – GamerHub</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <!-- 新增：风格卡片专项样式 -->
+  <link rel="stylesheet" href="css/page_css/styleguide.css"/>
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <nav id="nav-mobile" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html"><span class="icon">🏠</span></a></li>
+      <li><a href="site_map.html"><span class="icon">🗺</span></a></li>
+      <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
+      <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
+      <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
+    </ul>
+  </nav>
 
-        <nav id="nav-desktop" aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="site_map.html">Site Map</a></li>
-                <li><a href="style_guide.html">Style Guide</a></li>
-                <li><a href="ethical_response.html">Ethical Response</a></li>
-                <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
-            </ul>
-        </nav>
-        <main>
-            <div class="container">
-            <h1>style_guide</h1>
-            <img src="assets/APP1.jpg" alt="style_guide for GamerHub" style="width:100%; max-width:800px;" />
-            <img src="assets/APP2.jpg" alt="style_guide for GamerHub" style="width:100%; max-width:800px;" />
-            <img src="assets/APP3.jpg" alt="style_guide for GamerHub" style="width:100%; max-width:800px;" /><img src="assets/APP4.jpg" alt="style_guide for GamerHub" style="width:100%; max-width:800px;" /><img src="assets/WEB1.jpg" alt="style_guide for GamerHub" style="width:100%; max-width:800px;" /><img src="assets/WEB2.jpg" alt="style_guide for GamerHub" style="width:100%; max-width:800px;" />
-            </div>
-        </main>
-    </head>
-    </body>
+  <!-- Desktop Navigation -->
+  <nav id="nav-desktop" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="site_map.html">Site Map</a></li>
+      <li class="active"><a href="style_guide.html">Style Guide</a></li>
+      <li><a href="ethical_response.html">Ethical Response</a></li>
+      <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+    </ul>
+  </nav>
+
+  <main class="container mt-2 mb-2">
+    <h1>Style Guide</h1>
+    <p class="helper-box">
+      This is the style guide for GamerHub
+    </p>
+
+    <div class="card-container">
+      <!-- Visceral -->
+      <div class="card">
+        <img src="assets/visceral.png" alt="Visceral Illustration"/>
+        <div class="card-content">
+          <h2>Visceral</h2>
+          <p>
+            Designing for first impressions – covering information 
+            architecture, layout, typography and colour.
+          </p>
+          <button onclick="location.href='visceral_design.html'">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Behavioural -->
+      <div class="card">
+        <img src="assets/behavioural.png" alt="Behavioural Illustration"/>
+        <div class="card-content">
+          <h2>Behavioural</h2>
+          <p>
+            Designing for functionality – covering interactive components, 
+            micro-interactions and feedback.
+          </p>
+          <button onclick="location.href='behavioural_design.html'">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Reflective -->
+      <div class="card">
+        <img src="assets/reflective.png" alt="Reflective Illustration"/>
+        <div class="card-content">
+          <h2>Reflective</h2>
+          <p>
+            Designing for meaning and identity – covering how users reflect 
+            on and ascribe value to the site over time.
+          </p>
+          <button onclick="location.href='reflective_design.html'">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/modules/accordion.js"></script>
+</body>
 </html>
+

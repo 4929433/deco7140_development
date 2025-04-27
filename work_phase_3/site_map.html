@@ -1,112 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <body>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/components.css" />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="/work_phase_3/assets/favicon_io/favicon-16x16.png"
-        />
-        <title>Work Phase 3</title>
-        <nav id="nav-mobile" aria-label="Main Navigation">
-            <ul>
-              <li><a href="index.html"><span class="icon">🏠</span></a></li>
-              <li><a href="site_map.html"><span class="icon">🗺</span></a></li>
-              <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
-              <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
-              <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
-            </ul>
-          </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/page_css/site_map.css" />
+  <link rel="icon" type="image/x-icon" href="/work_phase_3/assets/favicon_io/favicon-16x16.png" />
+  <title>Work Phase 3</title>
+  <style>
+    /* Ensure all accordion-content (including third-level lists) is hidden by default */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    /* When open class applied, expand content */
+    .accordion-item.open > .accordion-content {
+      max-height: 500px; /* adjust as needed */
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <nav id="nav-mobile" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html"><span class="icon">🏠</span></a></li>
+      <li><a href="site_map.html"><span class="icon">🗺</span></a></li>
+      <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
+      <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
+      <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
+    </ul>
+  </nav>
+  <!-- Desktop Navigation -->
+  <nav id="nav-desktop" aria-label="Main Navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="site_map.html">Site Map</a></li>
+      <li><a href="style_guide.html">Style Guide</a></li>
+      <li><a href="ethical_response.html">Ethical Response</a></li>
+      <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+    </ul>
+  </nav>
+  <main>
+    <img src="assets/sitemap.png" class="responsive-img" alt="Card sort site map">
+  </main>
 
-        <nav id="nav-desktop" aria-label="Main Navigation">
+  <section class="accordion m-y-5">
+  <!-- 1. Customer Needs -->
+  <div class="accordion-item">
+    <button class="accordion-header">1. Customer Needs</button>
+    <div class="accordion-content">
+      <!-- Second level: Keywords -->
+      <section class="accordion nested">
+        <div class="accordion-item">
+          <button class="accordion-header">Search & Discovery</button>
+          <div class="accordion-content">
+            <!-- Third level: Details -->
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="site_map.html">Site Map</a></li>
-                <li><a href="style_guide.html">Style Guide</a></li>
-                <li><a href="ethical_response.html">Ethical Response</a></li>
-                <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+              <li>Quickly find games of interest</li>
+              <li>Filter and browse by genre, platform, newest releases</li>
+              <li>Accessible on both mobile and desktop</li>
             </ul>
-        </nav>
-        <main>
-            <div class="container">
-                <h1>GamerHub - Site Map</h1>
-                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
-                      <!-- Home -->
-                      <div>
-                        <div class="sticky yellow">Home</div>
-                        <div class="sticky blue">Search bar</div>
-                        <div class="sticky blue">Featured games</div>
-                        <div class="sticky blue">Trending games</div>
-                      </div>
-                  
-                      <!-- Browse -->
-                      <div>
-                        <div class="sticky yellow">Browse</div>
-                        <div class="sticky blue">By genre</div>
-                        <div class="sticky blue">By platform</div>
-                        <div class="sticky blue">Newest releases</div>
-                        <div class="sticky blue">Age rank</div>
-                      </div>
-                  
-                      <!-- Reviews -->
-                      <div>
-                        <div class="sticky yellow">Reviews</div>
-                        <div class="sticky blue">Read reviews</div>
-                        <div class="sticky blue">Write a review</div>
-                        <div class="sticky blue">Top-rated games</div>
-                      </div>
-                  
-                      <!-- Community -->
-                      <div>
-                        <div class="sticky yellow">Community</div>
-                        <div class="sticky blue">Discussion board</div>
-                        <div class="sticky blue">Comments</div>
-                        <div class="sticky blue">Upvotes</div>
-                      </div>
-                  
-                      <!-- About -->
-                      <div>
-                        <div class="sticky yellow">About</div>
-                        <div class="sticky blue">Site purpose</div>
-                        <div class="sticky blue">Contact / Feedback</div>
-                      </div>
-                    </div>
-                  </section>
-                  
-                  <style>
-                    .sticky {
-                      padding: 1rem;
-                      margin: 0.5rem 0;
-                      width: 160px;
-                      border-radius: 6px;
-                      box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-                      font-weight: bold;
-                      text-align: center;
-                    }
-                  
-                    .yellow {
-                      background-color: #ffe58f;
-                      color: #333;
-                    }
-                  
-                    .blue {
-                      background-color: #bae7ff;
-                      color: #000;
-                    }
-                  
-                    .container {
-                      padding: 2rem;
-                      max-width: 1100px;
-                      margin: 0 auto;
-                    }
-                  </style>
-                  
-              </main>
-            </body>
-            </html>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Reviews & Community</button>
+          <div class="accordion-content">
+            <ul>
+              <li>View and write user reviews</li>
+              <li>Engage in community discussions and upvotes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- 2. User Stories -->
+  <div class="accordion-item">
+    <button class="accordion-header">2. User Stories</button>
+    <div class="accordion-content">
+      <!-- Second level: Keywords -->
+      <section class="accordion nested">
+        <div class="accordion-item">
+          <button class="accordion-header">Finding & Browsing</button>
+          <div class="accordion-content">
+            <!-- Third level: Details -->
+            <ul>
+              <li>As a player, I want to quickly find games by searching.</li>
+              <li>As a novice, I want to browse games by genre or platform.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Reviewing & Sharing</button>
+          <div class="accordion-content">
+            <ul>
+              <li>As an experienced player, I want to read other players’ reviews to make informed decisions.</li>
+              <li>As an enthusiastic player, I want to write and share my own game reviews.</li>
+              <li>As a community member, I want to ask questions, reply, and upvote in discussion boards.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- 3. Accessibility Principles -->
+  <div class="accordion-item">
+    <button class="accordion-header">3. Accessibility Principles</button>
+    <div class="accordion-content">
+      <!-- Second level: Keywords -->
+      <section class="accordion nested">
+        <div class="accordion-item">
+          <button class="accordion-header">Semantic & Navigation</button>
+          <div class="accordion-content">
+            <!-- Third level: Details -->
+            <ul>
+              <li>Use semantic HTML for screen reader compatibility</li>
+              <li>Support full keyboard navigation (Tab/Enter)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Contrast & Responsiveness</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Maintain high contrast ratios (WCAG AA ≥ 4.5:1)</li>
+              <li>Apply ARIA attributes (aria-expanded, aria-controls) for dynamic elements</li>
+              <li>Ensure responsive design and avoid horizontal scrolling</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- 4. Design Principles -->
+  <div class="accordion-item">
+    <button class="accordion-header">4. Design Principles</button>
+    <div class="accordion-content">
+      <!-- Second level: Keywords -->
+      <section class="accordion nested">
+        <div class="accordion-item">
+          <button class="accordion-header">Feedback & Discoverability</button>
+          <div class="accordion-content">
+            <!-- Third level: Details -->
+            <ul>
+              <li>Provide clear feedback for actions (loading, completion)</li>
+              <li>Ensure discoverability of core features (search, categories, review entry)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Consistency & Usability</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Maintain visual and interaction consistency across the site</li>
+              <li>Minimize cognitive load with clear information hierarchy</li>
+              <li>Design large, tappable areas for mobile usability</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+  <script type="module" src="js/modules/accordion.js"></script>
+</body>
+</html>
