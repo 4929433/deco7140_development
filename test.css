@@ -1,0 +1,22 @@
+.styled-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  /* 悬停状态：发光并添加底线 */
+  .styled-link:hover {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 0 6px var(--accent-color);
+  }
+  
+  /* 访问过：颜色稍微暗淡 */
+  .styled-link:visited {
+    color: #88bde8;
+  }
+  

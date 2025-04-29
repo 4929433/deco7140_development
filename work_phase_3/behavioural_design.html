@@ -1,22 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <body>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <link rel="icon" type="image/x-icon" href="/work_phase_3/assets/favicon_io/favicon-16x16.png"/>
+        <link rel="stylesheet" href="css/page_css/behavioural_design.css" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/work_phase_3/assets/favicon_io/favicon-16x16.png"
+        />
         <title>Work Phase 3</title>
-        <nav id="nav-mobile" aria-label="Main Navigation"></nav>
-        <nav id="nav-desktop" aria-label="Main Navigation"></nav>
-        <main>
-            <div class="container">
-        <h1>behavioural_design</h1>
-        </div>
-        </main>
     </head>
+    <body>
+        <!-- Mobile Navigation -->
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <ul>
+                <li>
+                    <a href="index.html"><span class="icon">🏠</span></a>
+                </li>
+                <li>
+                    <a href="site_map.html"><span class="icon">🗺</span></a>
+                </li>
+                <li>
+                    <a href="style_guide.html"><span class="icon">🎨</span></a>
+                </li>
+                <li>
+                    <a href="ethical_response.html"
+                        ><span class="icon">⚖️</span></a
+                    >
+                </li>
+                <li>
+                    <a href="genai_mt_acknowledgement.html"
+                        ><span class="icon">🤖</span></a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Desktop Navigation -->
+        <nav id="nav-desktop" aria-label="Main Navigation"></nav>
+
+        <main class="container">
+            <div class="back-link">
+                <a href="style_guide.html" class="btn-tab"
+                    >← Back to Style Guide</a
+                >
+            </div>
+
+            <!-- Main Content -->
+
+            <h1>Behavioural Design</h1>
+            <p>
+                The focus of this section of the style guide is to ensure that
+                users' demands for usability and functionality are supported.
+            </p>
+            <div class="button-group m-t-3 m-b-3">
+                <button class="btn-tab">Links</button>
+                <button class="btn-tab">Navigation</button>
+                <button class="btn-tab">Cards</button>
+                <button class="btn-tab">Icons</button>
+                <button class="btn-tab">Buttons</button>
+                <button class="btn-tab">Forms</button>
+            </div>
+
+            <article class="section-content">
+                <h2>Link Styles</h2>
+                <p>
+                    This section shows how link states (normal, hover, visited)
+                    are styled for accessibility and clarity.
+                </p>
+                <a href="#" class="styled-link">Example</a>
+                <p>
+                    The default state has an underline. It glows when hovered
+                    and the color becomes slightly dimmer after access.
+                </p>
+
+                <h2>Menus and Navigation</h2>
+                <p>
+                    The navigation reflects the site’s information architecture
+                    and supports usability through clear labels and grouping.
+                </p>
+                <img
+                    src="assets/HiFi/navigation.png"
+                    alt="Navigation mock-up showing menu layout and hierarchy"
+                />
+                <img
+                    src="assets/HiFi/genres.png"
+                    alt="Form layout showing input fields and labels"
+                />
+
+                <h2>Card Components</h2>
+                <p>
+                    This section includes visual mock-ups of card components
+                    used for summarising content or directing users to more
+                    detail.
+                </p>
+                <img
+                    src="assets/HiFi/game1.png"
+                    alt="Card layout showing content structure and interaction"
+                />
+                <img
+                    src="assets/HiFi/review.png"
+                    alt="Card layout showing content structure and interaction"
+                />
+                <img
+                    src="assets/HiFi/searched game page1.png"
+                    alt="Card layout showing content structure and interaction"
+                />
+
+                <h2>buttons</h2>
+                <p>
+                    Buttons are used for actions and both have three display
+                    states (default, hover, and click).
+                </p>
+                <div class="button-group m-t-3 m-b-3">
+                    <button class="btn-tab">Example1</button>
+                </div>
+                <button class="btn-secondary">Example2</button>
+                <img
+                    src="assets/HiFi/buttons.png"
+                    alt="Button layout showing default, hover, and click states"
+                />
+
+                <h2>form</h2>
+                <p>
+                    Forms are used for user input and have been designed to be
+                    clear and easy to use.
+                </p>
+                <img
+                    src="assets/HiFi/search bar.png"
+                    alt="Form layout showing input fields and labels"
+                />
+                <img
+                    src="assets/HiFi/score.png"
+                    alt="Form layout showing input fields and labels"
+                />
+                <form id="FORM_ID_FROM_ENDPOINT_DOCS"></form>
+                <form id="community-form" class="form-vertical">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <input type="text" name="message" id="message" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-tab">
+                            Join the Community
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Feedback message area -->
+                <p id="form-feedback" aria-live="polite"></p>
+                <div id="community-list"></div>
+            </article>
+        </main>
+
+        <!-- JS 导入 -->
+        <script type="module" src="js/behavioural_design.js"></script>
     </body>
 </html>

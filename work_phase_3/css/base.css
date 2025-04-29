@@ -51,13 +51,18 @@ h3 {
 
 p {
     font-size: 1rem;
-    line-height: 2.5rem;
+    line-height: 1.5rem;
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 3rem;
+      font-size: 2rem; /* 更小字体以适配移动屏幕 */
+      word-break: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
     }
+  
+  
 
     h2 {
         font-size: 2rem;
