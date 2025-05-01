@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <body>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/page_css/Ethical response.css" />
         <link rel="icon" type="image/x-icon" href="/work_phase_3/assets/favicon_io/favicon-16x16.png"/>
         <title>Work Phase 3</title>
+    </head>
+    <body>
         <nav id="nav-mobile" aria-label="Main Navigation">
             <ul>
               <li><a href="index.html"><span class="icon">🏠</span></a></li>
@@ -18,7 +20,7 @@
               <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
               <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
             </ul>
-          </nav>
+        </nav>
 
         <nav id="nav-desktop" aria-label="Main Navigation">
             <ul>
@@ -29,11 +31,58 @@
                 <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
             </ul>
         </nav>
+
         <main>
-            <div class="container">
-        <h1>ethical_response</h1>
-        </div>
+            <div class="ethical-summary">
+                <h3>✍ Ethical Response Summary: Newsletter Plug-In</h3>
+                <p>In response to the newsletter subscription feature, we revisited the ethical implications raised in A2, guided by the ACS Code of Ethics and structured ethical reasoning. Our objective was to communicate potential ethical risks and recommend practical design changes that protect user rights while supporting the client’s engagement goals.</p>
+
+                <h4>⚠ Identified Ethical Risks</h4>
+                <ul>
+                  <li>Lack of Informed Consent: Users were not clearly informed about what they were signing up for or how their data would be used.</li>
+                  <li>Data Privacy: No visible policy about how long email data is stored or its purpose, raising transparency concerns.</li>
+                  <li>User Trust: The automatic display of the prompt may be perceived as manipulative, undermining autonomy.</li>
+                </ul>
+
+                <h4>🔍 Re-evaluation Based on A2 Feedback</h4>
+                <ul>
+                  <li>Missing Form Labels: Input fields lacked ARIA labels, making them inaccessible to screen readers.</li>
+                  <li>Repeated Landmarks: Multiple identical <code>&lt;form&gt;</code> or <code>&lt;nav&gt;</code> tags caused confusion for assistive technologies.</li>
+                  <li>Improper Structure: Omission of <code>&lt;fieldset&gt;</code> and distinct headings reduced semantic clarity.</li>
+                </ul>
+                <p>These concerns violate WCAG 1.3.1 (Info and Relationships) and hinder accessibility for visually impaired users.</p>
+
+                <h4>✅ Recommended Ethical Actions</h4>
+                <ul>
+                  <li>Use semantic <code>&lt;form&gt;</code> markup with accessible labels, e.g., <code>aria-label="newsletter sign-up"</code>.</li>
+                  <li>Add a double opt-in mechanism to confirm intentional consent from users.</li>
+                  <li>Provide a clear privacy link explaining what data is collected, for what purpose, and how long it is retained.</li>
+                  <li>Ensure each form and navigation landmark has a unique label or heading to aid screen reader clarity.</li>
+                </ul>
+
+                <h4>🎯 Justification & Client Benefits</h4>
+                <ul>
+                  <li>🧭 Primacy of Public Interest: Prioritizing accessibility and user control.</li>
+                  <li>💬 Honesty: Transparent communication builds trust.</li>
+                  <li>🔐 Informed Consent: Prevents accidental sign-ups and misuse of data.</li>
+                </ul>
+                <p>These improvements enhance the ethical integrity and accessibility of the platform, improving user satisfaction and strengthening the client’s reputation for responsible, inclusive design.</p>
+
+                <h4>📌 Additional Recommendations</h4>
+                <ul>
+                  <li>Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> tags to group related form elements for better screen reader understanding.</li>
+                  <li>Ensure headings follow a logical hierarchy (e.g., <code>&lt;h2&gt;</code> > <code>&lt;h3&gt;</code>) to support assistive navigation.</li>
+                  <li>Test the form with screen reader tools (e.g., NVDA or VoiceOver) to ensure clarity and navigation accuracy.</li>
+                  <li>Clearly distinguish navigation roles with <code>aria-label</code> or <code>role</code> attributes where multiple navs/forms exist.</li>
+                </ul>
+
+                <h4>🛠 Implementation Notes</h4>
+                <ul>
+                  <li>Include a persistent privacy notice link in the footer for transparency.</li>
+                  <li>Provide feedback messages confirming subscription and data usage details.</li>
+                  <li>Apply real-time validation with accessible error messages to reduce user frustration and improve trust.</li>
+                </ul>
+            </div>
         </main>
-    </head>
     </body>
 </html>

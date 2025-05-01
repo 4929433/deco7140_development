@@ -1,25 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <body>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="/work_phase_3/assets/favicon_io/favicon-16x16.png"
-        />
+        <link rel="stylesheet" href="css/page_css/reflective_design.css" />
+        <link rel="icon" type="image/x-icon" href="/work_phase_3/assets/favicon_io/favicon-16x16.png"/>
         <title>Work Phase 3</title>
-        <nav id="nav-mobile" aria-label="Main Navigation"></nav>
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <ul>
+              <li><a href="index.html"><span class="icon">🏠</span></a></li>
+              <li><a href="site_map.html"><span class="icon">🗺</span></a></li>
+              <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
+              <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
+              <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
+            </ul>
+          </nav>
         <nav id="nav-desktop" aria-label="Main Navigation"></nav>
+        </head>
         <main>
-            <div class="container">
-            <h1>reflective_design</h1>
+          <div class="back-link">
+            <a href="style_guide.html" class="btn-tab">← Back to Style Guide</a>
+          </div>
+          <h1 style="text-align: center;">Reflective Design</h1>
+          <p style="text-align: center;">focus of this section of the Style Guide is supporting user meaning and identity.</p>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Values Mapping</div>
+            <div class="accordion-content">
+              <p>The design of this website is grounded in clearly defined values derived from both the client’s mission and the user community’s needs. These include:</p>
+              <div class="accordion nested">
+                <div class="accordion-item">
+                  <div class="accordion-header">Belonging</div>
+                  <div class="accordion-content">
+                    <p>We ensure all users feel represented and welcomed by showcasing diversity in imagery and language, supporting a stronger sense of community and shared identity.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">Empowerment</div>
+                  <div class="accordion-content">
+                    <p>Through accessible navigation and personalized discovery features, users are given agency in how they interact with the content.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">Transparency</div>
+                  <div class="accordion-content">
+                    <p>We use clear visual hierarchy, consent mechanisms, and explain how personal data is used in non-intrusive ways.</p>
+                  </div>
+                </div>
+              </div>
+              <p><strong>WCAG 2.2 Alignment:</strong></p>
+              <ul>
+                <li>1.1.1 Non-text Content: Alt text for all functional images.</li>
+                <li>1.3.2 Meaningful Sequence: Semantic HTML for assistive tech.</li>
+                <li>3.1.5 Reading Level: Plain language maintained sitewide.</li>
+                <li>3.2.4 Consistent Navigation: Menus remain persistent.</li>
+                <li>3.3.1 Error Identification: Form errors explained clearly.</li>
+              </ul>
             </div>
-        </main>
-    </head>
-    <body></body>
+          </div>
+        
+          <div class="accordion-item">
+            <div class="accordion-header">Meaning through Imagery and Tone</div>
+            <div class="accordion-content">
+              <p>Visual language on the homepage is designed to emotionally resonate with a diverse audience.</p>
+              <div class="accordion nested">
+                <div class="accordion-item">
+                  <div class="accordion-header">Identity Projection</div>
+                  <div class="accordion-content">
+                    <p>The homepage showcases relatable personas and playful layout features to create a sense of familiarity, strength, and optimism.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">Tone of Voice</div>
+                  <div class="accordion-content">
+                    <p>Language is informal, supportive, and inviting – messages such as "Find the next game you’ll love" create a personal connection with the user.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="quote-card">
+               For Example “Welcome to your personalized game discovery hub—curated by players, for players.”
+              </div>
+              
+              <p><strong>Annotation:</strong> Tone is direct and inclusive. The structure speaks to user agency, and the visual layout amplifies emotional engagement.</p>
+              
+              <div class="dynamic-content-wrapper">
+                <section class="imagery-tone-support" style="margin-top: 2rem; line-height: 1.6;">
+                  <h3 style="color: #003366; font-weight: bold; font-size: 1.5em; margin-bottom: 0.5em;">
+                    How Homepage Visuals Support Identity and Emotional Tone
+                  </h3>
+                  <p style="margin-bottom: 1em;">
+                    Our homepage layout uses five key visual elements to support the platform’s identity as a 
+                    <strong>player-focused, community-driven game discovery space</strong>, while reinforcing an emotional tone of 
+                    <strong>trust, personalization, and inclusion</strong>:
+                  </p>
+                  <ul style="list-style: disc; padding-left: 1.2em;">
+                    <li><strong>Game Search Bar:</strong> Placed prominently to emphasize speed and control, reflecting a user-first identity and efficient tone.</li>
+                    <li><strong>Popular Games Section:</strong> Builds trust through curated trending content, evoking excitement and credibility.</li>
+                    <li><strong>Community Activity Feed:</strong> Highlights real player voices to promote authenticity and emotional connection.</li>
+                    <li><strong>Recommended for You:</strong> Delivers personalization, enhancing user agency and trust in the platform.</li>
+                    <li><strong>Browse by Genre:</strong> Offers clarity and easy access, supporting inclusivity and a welcoming experience.</li>
+                  </ul>
+                  <div class="genre-images">
+                    <img src="assets/HiFi/examples of homepage imagery11.png" alt="Genre layout example 1" />
+                    <img src="assets/HiFi/examples of homepage imagery1.png" alt="Genre layout example 2" />
+                  </div>
+                  
+                </section>
+              </div>
+              
+            </div>
+          </div>
+        
+          <div class="accordion-item">
+            <div class="accordion-header">Reflective Language and Expression</div>
+            <div class="accordion-content">
+              <p>The tone across the platform is shaped by identity-sensitive and emotionally aware content choices.</p>
+              <div class="accordion nested">
+                <div class="accordion-item">
+                  <div class="accordion-header">Language Checklist</div>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>Inclusive and bias-free</li>
+                      <li>Emotionally appropriate (warm, safe)</li>
+                      <li>Clear and jargon-free</li>
+                      <li>Free from harmful stereotypes</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">Before and After Example</div>
+                  <div class="accordion-content">
+                    <p><strong>Original:</strong> “Users must log in to access reviews.”</p>
+                    <p><strong>Revised:</strong> “Log in to discover and share your favourite games with the community.”</p>
+                    <p><strong>Annotation:</strong> Rewording shifts the focus to empowerment and participation instead of restriction.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="accordion-item">
+            <div class="accordion-header">Ethical Decision-Making</div>
+            <div class="accordion-content">
+              <p>Our site includes a newsletter subscription form, per the client’s brief. However, ethical risks were assessed and mitigated through intentional design strategies.</p>
+              <div class="accordion nested">
+                <div class="accordion-item">
+                  <div class="accordion-header">Identified Risks</div>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>Unclear data usage policies</li>
+                      <li>Lack of informed consent</li>
+                      <li>Loss of trust if users feel coerced</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">Safeguards</div>
+                  <div class="accordion-content">
+                    <ul>
+                      <li>Double opt-in confirmation system</li>
+                      <li>Transparent privacy policy link near sign-up</li>
+                      <li>“Unsubscribe anytime” messaging for trust reinforcement</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <p><strong>Justification:</strong> These design decisions are ethically grounded in user autonomy and privacy, complying with ACS principles and user-centered design best practices.</p>
+            </div>
+          </div>
+          <section id="community-list"></section>
+
+
+
+
+          <section id="accessibility-review" class="audit-report" style="margin-top: 3rem;">
+            <h2 style="text-align: center; font-size: 1.5rem; font-weight: bold; color: var(--text-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+              Accessibility Review Summary
+            </h2>
+            <div class="audit-card">
+              <h3>Issue 1: Duplicate “form” landmarks without labels</h3>
+              <p><strong>WCAG Criterion:</strong> 1.3.1 Info and Relationships</p>
+              <p><strong>Impact:</strong> Screen reader users could not distinguish multiple forms.</p>
+              <p><strong>Fix:</strong> Added <code>aria-label</code> or headings to each form.</p>
+            </div>
+          
+            <div class="audit-card">
+              <h3>Issue 2: Multiple <code>&lt;nav&gt;</code> landmarks labeled “main navigation”</h3>
+              <p><strong>WCAG Criterion:</strong> 1.3.1 Info and Relationships</p>
+              <p><strong>Impact:</strong> Assistive tech users couldn’t tell the difference between navs.</p>
+              <p><strong>Fix:</strong> Renamed with <code>aria-label</code> like “Mobile Nav” and “Footer Nav”.</p>
+            </div>
+          
+            <div class="audit-card">
+              <h3>Issue 3: Unstructured related form inputs</h3>
+              <p><strong>WCAG Criterion:</strong> 1.3.1 Info and Relationships</p>
+              <p><strong>Impact:</strong> Users couldn’t perceive the relationship between grouped fields.</p>
+              <p><strong>Fix:</strong> Wrapped inputs in <code>&lt;fieldset&gt;</code> with descriptive <code>&lt;legend&gt;</code>.</p>
+            </div>
+          </section>
+          <div class="genre-images">
+            <img src="assets/HiFi/problem1.png" alt="1" />
+            <img src="assets/HiFi/problem2.png" alt="2" />
+          </div>
+          <section class="accordion-item">
+            <div class="accordion-header">Ethical Response Summary: Newsletter Plug-In</div>
+            <div class="accordion-content">
+              <div class="ethical-summary">
+                <h3>✍ Ethical Response Summary: Newsletter Plug-In</h3>
+          
+                <h4>📌 Background</h4>
+                <p>
+                  In response to the newsletter subscription feature, we revisited the ethical implications raised in A2, guided by the ACS Code of Ethics and structured ethical reasoning.
+                  Our objective was to communicate potential ethical risks and recommend practical design changes that protect user rights while supporting the client’s engagement goals.
+                </p>
+          
+                <h4>⚠ Identified Ethical Risks</h4>
+                <ul>
+                  <li><strong>Lack of Informed Consent:</strong> Users were not clearly informed about what they were signing up for or how their data would be used.</li>
+                  <li><strong>Data Privacy:</strong> No visible policy about how long email data is stored or its purpose, raising transparency concerns.</li>
+                  <li><strong>User Trust:</strong> The automatic display of the prompt may be perceived as manipulative, undermining autonomy.</li>
+                </ul>
+          
+                <h4>🔍 Re-evaluation Based on A2 Feedback</h4>
+                <ul>
+                  <li>🧩 <strong>Missing Form Labels:</strong> Input fields lacked ARIA labels, making them inaccessible to screen readers.</li>
+                  <li>🧭 <strong>Repeated Landmarks:</strong> Multiple identical <code>&lt;form&gt;</code> or <code>&lt;nav&gt;</code> tags made navigation difficult for users with assistive tech.</li>
+                  <li>📓 <strong>Improper Structure:</strong> The omission of <code>&lt;fieldset&gt;</code> and distinct headings reduced semantic clarity.</li>
+                </ul>
+                <p>
+                  These concerns violate <strong>WCAG 1.3.1 (Info and Relationships)</strong> and affect users who depend on assistive technologies for basic navigation and understanding.
+                </p>
+          
+                <h4>✅ Recommended Ethical Actions</h4>
+                <ul>
+                  <li>✔ Use semantic <code>&lt;form&gt;</code> markup with accessible labels, e.g., <code>aria-label="newsletter sign-up"</code>.</li>
+                  <li>✔ Add a <strong>double opt-in</strong> mechanism to confirm intentional consent from users.</li>
+                  <li>✔ Provide a clear privacy link explaining what data is collected, for what purpose, and how long it is retained.</li>
+                  <li>✔ Ensure each form and navigation landmark has a <strong>unique label or heading</strong> to aid screen reader clarity.</li>
+                </ul>
+          
+                <h4>🎯 Justification & Client Benefits</h4>
+                <p>
+                  These actions reflect key ACS values:
+                </p>
+                <ul>
+                  <li>🎯 <strong>Primacy of Public Interest:</strong> Prioritizing accessibility and user control.</li>
+                  <li>🤝 <strong>Honesty:</strong> Transparent collection practices build user trust.</li>
+                  <li>🔐 <strong>Informed Consent:</strong> Preventing accidental sign-ups or misuse of personal information.</li>
+                </ul>
+                <p>
+                  These improvements enhance the ethical integrity and accessibility of the platform, improving user satisfaction and strengthening the client's reputation for responsible, inclusive design.
+                </p>
+              </div>
+            </div>
+          </section>
+          
+          
+          <script type="module" src="js/reflective_design.js"></script>
+   </body>
 </html>

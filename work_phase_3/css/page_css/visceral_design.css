@@ -122,4 +122,97 @@ div.livereload {
     outline-offset: 2px;
   }
 
-    
+  .accordion-item .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-item.open .accordion-content {
+    max-height: 500px;
+    padding: 1rem;
+}
+
+.accordion-header {
+    cursor: pointer;
+    /* 其它背景、内边距、边框样式… */
+}
+
+.m-y-5 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+/* ── 基础折叠面板样式 ── */
+.accordion-item {
+    background: var(--secondary-color);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: var(--accent-color);
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* 默认一级箭头 */
+.accordion-header::before {
+    content: "▷";
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* 展开时箭头旋转 */
+.accordion-item.open>.accordion-header::before {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background: #fff;
+    /* 或者你想的内容背景 */
+    color: #333;
+}
+
+.accordion-item.open>.accordion-content {
+    padding: 1rem;
+    max-height: 500px;
+}
+
+/* ── 嵌套层级样式 ── */
+.accordion-content .accordion {
+    margin-top: 0.5rem;
+}
+
+/* 第二级：两道箭头，并缩进/加左边框 */
+.accordion-content .accordion.nested .accordion-header {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.accordion-content .accordion.nested .accordion-header::before {
+    content: "▷▷";
+}
+
+.accordion-content .accordion.nested {
+    margin-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+/* 第三级：三道箭头，再次缩进/加左边框 */
+.accordion-content .accordion.nested .accordion.nested .accordion-header::before {
+    content: "▷▷▷";
+}   

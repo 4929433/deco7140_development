@@ -1,0 +1,64 @@
+/* ===== Ethical Summary Page Styles ===== */
+
+.ethical-summary {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .ethical-summary h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .ethical-summary h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .ethical-summary p {
+    margin-bottom: 1rem;
+  }
+  
+  .ethical-summary ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ethical-summary li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .ethical-summary code {
+    background-color: #f3f3f3;
+    padding: 0 0.3rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #1a1a1a;
+  }
+  
+  @media (max-width: 768px) {
+    .ethical-summary {
+      padding: 1.25rem;
+    }
+    .ethical-summary h3 {
+      font-size: 1.5rem;
+    }
+    .ethical-summary h4 {
+      font-size: 1.1rem;
+    }
+  }
+  
