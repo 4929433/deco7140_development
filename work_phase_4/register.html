@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -19,7 +20,7 @@
         
   <header class="header">
     <div class="logo">
-      <a href="homepage.html" class="logo-link">
+      <a href="index.html" class="logo-link">
       <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
       </a>
     </div>
@@ -59,7 +60,7 @@
   <section class="register-section">
     <div class="register-box">
       <h2>Register for GameWorld</h2>
-      <form id="community-form" enctype="multipart/form-data">
+<form id="community-form" enctype="multipart/form-data" novalidate>
         <input type="text" name="name" placeholder="Username" required />
         <input type="email" name="email" placeholder="Email" required />
         <input type="password" name="password" placeholder="Password" required />
@@ -85,7 +86,7 @@
     backToLoginPopup?.addEventListener('click', (e) => {
       e.preventDefault();
       localStorage.setItem('triggerLoginOnLoad', 'true');
-      window.location.href = 'homepage.html';
+      window.location.href = 'index.html';
     });
   });
 </script>
@@ -120,7 +121,7 @@
 
   <script src="js/links.js"></script>
   <script src="js/login.js"></script>
-  <script src="js/register.js"></script>
+  <script type="module" src="js/auth.js"></script>
 </body>
 </html>
 

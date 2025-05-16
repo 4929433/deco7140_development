@@ -39,7 +39,7 @@ body {
   width: auto;
   display: flex;
 position: relative;
-  top: -30px;
+  top: -2px;
 }
 
 
@@ -138,7 +138,7 @@ main {
   }
 }
 
-/* 导航容器样式 */
+
 .nav {
   display: flex;
   align-items: center;
@@ -147,7 +147,7 @@ main {
   flex-wrap: wrap;
 }
 
-/* 搜索框样式 */
+
 .search-bar {
   display: flex;
   align-items: center;
