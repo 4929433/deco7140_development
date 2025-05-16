@@ -1,5 +1,5 @@
 // js/auth.js
-import { postFormData } from './modules/postFormData.js';
+import { postFormData } from './modules/postformData.js';
 import { fetchGetData }  from './modules/getData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -95,11 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === loginModal) loginModal.style.display = 'none';
   });
 
-  // —— 4. 社区页面登录保护 —— 
-  if (location.pathname.endsWith('community.html') && !isLoggedIn) {
-    localStorage.setItem('triggerLoginOnLoad', 'true');
-    window.location.href = 'index.html';
-  }
 
   // —— 5. 首页自动弹登录（来自注册跳转） —— 
   if (location.pathname.endsWith('index.html') && localStorage.getItem('triggerLoginOnLoad') === 'true') {

@@ -18,37 +18,49 @@
             href="/work_phase_4/images/favicon-16x16.png"
         /></head>
         
-  <header class="header">
-    <div class="logo">
-      <a href="index.html" class="logo-link">
+<header class="header">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
       <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
-      </a>
-    </div>
-    <nav class="nav">
-      <div class="hamburger" id="hamburger">&#9776;</div>
+    </a>
+  </div>
+
+  <nav class="nav">
+    <div class="hamburger" id="hamburger">&#9776;</div>
     <ul class="nav-links" id="navLinks">
+
+      <li class="nav-item">
         <form class="search-bar" action="/search" method="get">
-    <input type="text" name="q" placeholder="search" />
-    <button type="submit">🔍</button>
-  </form>
-  <li><a href="game.html">Top Games</a></li>
-  <li><a href="community.html">Community</a></li>
-  <li><a href="contect.html">About Us</a></li>
-<li class="auth-group">
-  <a href="#" class="auth-icon-wrapper" aria-label="Login Icon" id="iconLogin">
-    <svg class="auth-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 24 24">
-      <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-    </svg>
-  </a>
- <a href="#" class="auth-link" id="openLogin">Login</a>
-  <span class="divider">|</span>
-  <a href="register.html" class="auth-link">Register</a>
+          <input type="text" name="q" placeholder="search" />
+          <button type="submit">🔍</button>
+        </form>
+      </li>
 
+      <!--Top Games -->
+      <li class="nav-item dropdown">
+        <a href="Top games.html" class="nav-link">Top Games</a>
+        <ul class="dropdown-menu">
+          <li><a href="/work_phase_4/gamepage/game1.html">Single-player</a></li>
+          <li><a href="/work_phase_4/gamepage/game2.html">Online Games</a></li>
+          <li><a href="/work_phase_4/gamepage/game3.html">Mobile Games</a></li>
+          <li><a href="community">Community Center</a></li>
+          <li><a href="Download.html">Download Center</a></li>
+          <li><a href="contect.html">Report an Issue</a></li>
+        </ul>
+      </li>
 
-</li>
-</ul>
-    </nav>
-  </header>
+      <li class="nav-item"><a href="community.html">Community</a></li>
+      <li class="nav-item"><a href="About Us.html">About Us</a></li>
+
+      <li class="nav-item auth-group">
+        <a href="#" class="auth-link" id="openLogin">Login</a>
+        <span class="divider">|</span>
+        <a href="register.html" class="auth-link">Register</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 
 
   
@@ -76,7 +88,11 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 GameWorld. All rights reserved.</p>
+    
+    <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
+      <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
+    
   </footer>
 
 
