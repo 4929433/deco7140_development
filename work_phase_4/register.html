@@ -9,7 +9,7 @@
         <title>GameWorld</title>
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/table.css" />
         <link rel="stylesheet" href="css/components.css" />
         <link
             rel="icon"
@@ -42,37 +42,53 @@
  <a href="#" class="auth-link" id="openLogin">Login</a>
   <span class="divider">|</span>
   <a href="register.html" class="auth-link">Register</a>
-
-
 </li>
 </ul>
     </nav>
   </header>
 
 
-  
+
+
+
+
+
   <body>
-  <main>
-    <section class="hero">
-      <h1>Welcome to GameWorld</h1>
-      <p>Find, explore, and discuss your favorite games in one place.</p>
-    </section>
 
+<main>
+  <section class="register-section">
+    <div class="register-box">
+      <h2>Register for GameWorld</h2>
+      <form id="community-form" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
 
+        <label for="avatar">Upload Avatar</label>
+        <input type="file" name="avatar" id="avatar" accept="image/*" />
+        <img id="avatarPreview" alt="Preview" style="display: none; width: 80px; height: 80px; border-radius: 50%; margin-top: 10px; object-fit: cover;" />
 
+        <button type="submit">Register</button>
+        <div id="form-feedback" class="error-message"></div>
 
+        <p class="login-redirect">
+          Already have an account? <a href="#" id="backToLoginPopup">Login</a>
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
 
-
-
-
-
-
-
-
-
-
-
-  </main>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const backToLoginPopup = document.getElementById('backToLoginPopup');
+    backToLoginPopup?.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.setItem('triggerLoginOnLoad', 'true');
+      window.location.href = 'homepage.html';
+    });
+  });
+</script>
 
   <footer class="footer">
     <p>&copy; 2025 GameWorld. All rights reserved.</p>
@@ -107,3 +123,4 @@
   <script src="js/register.js"></script>
 </body>
 </html>
+

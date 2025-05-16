@@ -1,0 +1,43 @@
+/* 搜索栏整体容器 */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 2px solid #334155;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 36px;
+  max-width: 300px; /* 可根据需要修改宽度 */
+  background-color: #0f172a;
+}
+
+/* 输入框 */
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0 12px;
+  font-size: 0.9rem;
+  color: #f8fafc;
+}
+
+/* 占位文字 */
+.search-bar input::placeholder {
+  color: rgba(248, 250, 252, 0.6);
+}
+
+/* 按钮 */
+.search-bar button {
+  border: none;
+  background-color: #06b6d4;
+  color: #1e293b;
+  padding: 0 16px;
+  height: 100%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #05a3af;
+}
