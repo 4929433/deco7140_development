@@ -19,7 +19,7 @@
   />
 </head>
 <body>
-  <!-- header 保持不变 -->
+
   <header class="header">
     <div class="logo">
       <a href="index.html" class="logo-link">
@@ -32,7 +32,7 @@
 
         
         <li class="nav-item dropdown">
-          <a href="Top games.html" class="nav-link">Top Games</a>
+          <a href="index.html" class="nav-link">Top Games</a>
           <ul class="dropdown-menu">
             <li><a href="game1.html">Single-player</a></li>
             <li><a href="game2.html">Online Games</a></li>
@@ -77,11 +77,11 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 GameWorld</p>
-    <ul class="footer-links">
-      <li class="footer-item"><a href="About Us.html">About Us</a></li>
-      <li class="footer-item"><a href="contect.html">Find Us</a></li>
-    </ul>
+    
+    <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
+      <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
+    
   </footer>
 
   <!-- login modal 保持不变 -->
@@ -116,12 +116,13 @@
     </div>
   </div>
 
-  <!-- 现有脚本 -->
+
+
   <script src="js/links.js" defer></script>
   <script type="module" src="js/login.js" defer></script>
   <script type="module" src="js/auth.js" defer></script>
 
-  <!-- 搜索逻辑脚本 -->
+ 
   <script defer>
     async function onSearch(e) {
       e.preventDefault();
@@ -158,5 +159,43 @@
       .getElementById("game-search-form")
       .addEventListener("submit", onSearch);
   </script>
+
+
+
+
+
+
+
+
+
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">🏠</span>
+    <span class="mobile-nav__label">Home</span>
+  </a>
+  <div class="mobile-nav__item game-menu">
+    <button class="game-menu__trigger">
+      <span class="mobile-nav__icon">🎮</span>
+      <span class="mobile-nav__label">Games</span>
+    </button>
+    <ul class="game-menu__list">
+    <li><a href="game1.html">Single</a></li>
+      <li><a href="game2.html">Online</a></li>
+      <li><a href="game3.html">Mobile</a></li>
+    </ul>
+  </div>
+  <a href="community.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">💬</span>
+    <span class="mobile-nav__label">Community</span>
+  </a>
+  <a href="download.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">⬇️</span>
+    <span class="mobile-nav__label">Download</span>
+  </a>
+
+</nav>
+
+
+
 </body>
 </html>

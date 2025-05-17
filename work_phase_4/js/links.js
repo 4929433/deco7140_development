@@ -25,3 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+  document.querySelectorAll('.game-menu__trigger').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const menu = btn.parentElement;
+      menu.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.game-menu')) {
+      document.querySelectorAll('.game-menu.open')
+              .forEach(m => m.classList.remove('open'));
+    }
+  });

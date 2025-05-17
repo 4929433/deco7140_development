@@ -9,7 +9,8 @@
 }
 
 .modal-content {
-  background-color: #1e293b;
+  background-color: #2c3e50;
+  border: 1px solid #ddd;
   padding: 2rem;
   border-radius: 12px;
   width: 100%;
@@ -43,18 +44,21 @@
 }
 
 .modal-content button {
-  background-color: #06b6d4;
-  color: #1e293b;
-  font-weight: bold;
-  padding: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: #8ec7ff; 
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content button:hover {
-  background-color: #05a3af;
+    background: #00f7ff; 
+  transform: translateY(-2px);
 }
 
 .close-btn {
@@ -97,10 +101,101 @@
   padding: 0.75rem;
   border: none;
   border-radius: 8px;
-  background-color: #334155;
+  background-color: #ffffff;
   color: white;
 }
 
 .modal-content input::placeholder {
-  color: #cbd5e1;
+  color: #505050;
+}
+
+/* 底部导航，只在移动端显示 */
+@media (max-width: 768px) {
+  .mobile-nav {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+    display: flex;
+    background: #1e293b;
+    border-top: 1px solid #334155;
+    z-index: 1001;
+  }
+  .mobile-nav__item {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.75rem;
+    position: relative;
+  }
+  .mobile-nav__icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .mobile-nav__label {
+    display: block;
+    line-height: 1;
+  }
+  .mobile-nav__item:hover,
+  .mobile-nav__item:focus,
+  .mobile-nav__item.active {
+    color: #60a5fa;
+    background: #334155;
+  }
+
+  /* Game 下拉菜单 */
+  .game-menu {
+    cursor: pointer;
+  }
+  .game-menu__trigger {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+  }
+  .game-menu__list {
+    position: absolute;
+    bottom: 100%;    /* 在底部导航上方弹出 */
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    min-width: 140px;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+    z-index: 1002;
+  }
+  .game-menu__list li + li {
+    margin-top: 0.25rem;
+  }
+  .game-menu__list a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+  }
+  .game-menu__list a:hover {
+    background: #334155;
+  }
+  .game-menu.open .game-menu__list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 桌面端隐藏底部导航 */
+@media (min-width: 769px) {
+  .mobile-nav { display: none; }
 }

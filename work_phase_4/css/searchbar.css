@@ -39,5 +39,6 @@
 }
 
 .search-bar button:hover {
-  background-color: #05a3af;
+   background: #00f7ff; 
+  transform: translateY(-2px);
 }
