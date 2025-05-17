@@ -102,7 +102,7 @@
   border: none;
   border-radius: 8px;
   background-color: #ffffff;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .modal-content input::placeholder {
@@ -198,4 +198,8 @@
 /* 桌面端隐藏底部导航 */
 @media (min-width: 769px) {
   .mobile-nav { display: none; }
+}
+.review-card__avatar {
+  font-size: 2rem;   
+  line-height: 1;     
 }

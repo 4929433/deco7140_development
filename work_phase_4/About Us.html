@@ -156,5 +156,29 @@
   <script src="js/links.js"></script>
   <script type="module" src="js/login.js"></script>
   <script type="module" src="js/auth.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const authGroup = document.querySelector('.auth-group');
+  if (!authGroup) return;
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const username   = localStorage.getItem('username');
+  const avatar     = localStorage.getItem('avatar') || 'images/default-avatar.png';
+
+  if (isLoggedIn && username) {
+    authGroup.innerHTML = `
+      <div class="user-info" style="display:flex;align-items:center;gap:0.5rem">
+        <img src="${avatar}" alt="Avatar" style="width:32px;height:32px;border-radius:50%">
+        <span style="color:#f8fafc;">${username}</span>
+        <button id="logoutBtn" class="auth-link" style="background:none;border:none;color:#f8fafc;cursor:pointer;">Logout</button>
+      </div>
+    `;
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.reload();
+    });
+  }
+});
+</script>
+
 </body>
 </html>

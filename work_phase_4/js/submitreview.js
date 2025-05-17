@@ -1,30 +1,35 @@
+
 import { postFormData } from './modules/postFormData.js';
 
-document.getElementById('reviewForm').addEventListener('submit', async function (e) {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  const form     = document.getElementById('reviewForm');
+  const feedback = document.createElement('div');
+  feedback.className = 'form-feedback';
+  form.appendChild(feedback);
 
-  const form = e.target;
-  const rating = form.querySelector('input[name="rating"]:checked');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    feedback.textContent = 'Submitting…';
+    feedback.style.color = '#f8fafc';
 
-  const formData = new FormData();
-  formData.append("name", form.username.value);              // 用户名
-  const game = form.game.value;
-const comment = form.comment.value;
-formData.append("message", `🎮 ${game}\n${comment}`);
-  formData.append("rating", rating ? rating.value : "0");    // 你可以选择是否单独上传评分
-  formData.append("student_number", "s4929433");
-  formData.append("uqcloud_zone_id", "64e84824");
+   
+    const { success, data } = await postFormData(
+      form,
+      'https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/community/',
+      {
+        student_number: 's4929433',
+        uqcloud_zone_id: '64e84824'
+      }
+    );
 
-  try {
-    await fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/community/", {
-      method: "POST",
-      body: formData,
-    });
-    alert("✅ Review submitted!");
-    form.reset();
-  } catch (err) {
-    alert("❌ Submission failed.");
-    console.error(err);
-  }
+    if (success) {
+      feedback.textContent = data.message || 'Review submitted!';
+      feedback.style.color = '#60a5fa';
+      form.reset();
+    } else {
+      feedback.textContent = data.message || 'Submission failed.';
+      feedback.style.color = '#f87171';
+    }
+  });
 });
 

@@ -75,19 +75,19 @@
   <form id="reviewForm" class="review-form">
  
     <div class="form-group">
-      <label for="username">Your Name</label>
-      <input type="text" name="username" id="username" placeholder="e.g. XuanX" required />
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name"/>
     </div>
 
  
     <div class="form-group">
-      <label for="game">Game Name</label>
-      <input type="text" name="game" id="game" placeholder="e.g. Valorant" required />
+      <label for="Email">Email</label>
+      <input type="email" name="email" id="email"/>
     </div>
 
     <div class="form-group">
-      <label for="comment">Your Review</label>
-      <textarea name="comment" id="comment" placeholder="Write your thoughts about the game..." required></textarea>
+      <label for="text">Your Review</label>
+      <textarea name="message" id="message" placeholder="Write your thoughts about the game..." required></textarea>
     </div>
 
     <div class="form-group stars">
@@ -195,5 +195,29 @@
   <script type="module" src="js/auth.js"></script>
   <script type="module" src="js/getreview.js"></script>
   <script type="module" src="js/submitreview.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const authGroup = document.querySelector('.auth-group');
+  if (!authGroup) return;
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const username   = localStorage.getItem('username');
+  const avatar     = localStorage.getItem('avatar') || 'images/default-avatar.png';
+
+  if (isLoggedIn && username) {
+    authGroup.innerHTML = `
+      <div class="user-info" style="display:flex;align-items:center;gap:0.5rem">
+        <img src="${avatar}" alt="Avatar" style="width:32px;height:32px;border-radius:50%">
+        <span style="color:#f8fafc;">${username}</span>
+        <button id="logoutBtn" class="auth-link" style="background:none;border:none;color:#f8fafc;cursor:pointer;">Logout</button>
+      </div>
+    `;
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.reload();
+    });
+  }
+});
+</script>
+
 </body>
 </html>
