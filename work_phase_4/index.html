@@ -1,126 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
-        <title>GameWorld</title>
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/components.css" />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="/work_phase_4/images/favicon-16x16.png"
-        /></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>GameWorld</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="images/favicon-16x16.png"
+  />
+</head>
+<body>
+  <!-- header 保持不变 -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
+      </a>
+    </div>
+    <nav class="nav">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links" id="navLinks">
+
         
-<header class="header">
-  <div class="logo">
-    <a href="index.html" class="logo-link">
-      <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
-    </a>
-  </div>
+        <li class="nav-item dropdown">
+          <a href="Top games.html" class="nav-link">Top Games</a>
+          <ul class="dropdown-menu">
+            <li><a href="game1.html">Single-player</a></li>
+            <li><a href="game2.html">Online Games</a></li>
+            <li><a href="game3.html">Mobile Games</a></li>
+            <li><a href="community.html">Community Center</a></li>
+            <li><a href="Download.html">Download Center</a></li>
+            <li><a href="contect.html">Report an Issue</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="community.html">Community</a></li>
+        <li class="nav-item"><a href="Download.html">Download</a></li>
+        <li class="nav-item"><a href="About Us.html">About Us</a></li>
+        <li class="nav-item auth-group">
+          <a href="#" class="auth-link" id="openLogin">Login</a>
+          <span class="divider">|</span>
+          <a href="register.html" class="auth-link">Register</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav class="nav">
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="navLinks">
-
-      <li class="nav-item">
-        <form class="search-bar" action="/search" method="get">
-          <input type="text" name="q" placeholder="search" />
-          <button type="submit">🔍</button>
-        </form>
-      </li>
-
-      <!--Top Games -->
-      <li class="nav-item dropdown">
-        <a href="Top games.html" class="nav-link">Top Games</a>
-        <ul class="dropdown-menu">
-          <li><a href="/work_phase_4/gamepage/game1.html">Single-player</a></li>
-          <li><a href="/work_phase_4/gamepage/game2.html">Online Games</a></li>
-          <li><a href="/work_phase_4/gamepage/game3.html">Mobile Games</a></li>
-          <li><a href="community">Community Center</a></li>
-          <li><a href="Download.html">Download Center</a></li>
-          <li><a href="contect.html">Report an Issue</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-item"><a href="community.html">Community</a></li>
-      <li class="nav-item"><a href="About Us.html">About Us</a></li>
-
-      <li class="nav-item auth-group">
-        <a href="#" class="auth-link" id="openLogin">Login</a>
-        <span class="divider">|</span>
-        <a href="register.html" class="auth-link">Register</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-
-
-  
-  <body>
   <main>
     <section class="hero">
       <h1>Welcome to GameWorld</h1>
       <p>Find, explore, and discuss your favorite games in one place.</p>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- 游戏搜索表单 -->
+    <section class="game-search-section" style="margin:2rem 0;">
+      <form id="game-search-form">
+        <input
+          type="text"
+          id="game-query"
+          placeholder="输入游戏名…"
+          required
+          style="padding:0.5rem; width:200px;"
+        />
+        <button type="submit" style="padding:0.5rem 1rem;">搜索</button>
+      </form>
+      <div id="game-container" style="margin-top:1rem;"></div>
+    </section>
   </main>
 
   <footer class="footer">
-    
-    <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
-      <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
-      <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
-    
+    <p>&copy; 2025 GameWorld</p>
+    <ul class="footer-links">
+      <li class="footer-item"><a href="About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="contect.html">Find Us</a></li>
+    </ul>
   </footer>
 
-
-
-
-  <!--login-->
-<div id="loginModal" class="modal-overlay">
-  <div class="modal-content">
-    <span class="close-btn" id="closeLogin">&times;</span>
-    <h2>Login to GameWorld</h2>
-<form id="loginForm">
-  <input type="text" id="loginEmail" placeholder="Email or Username" required />
-  <input type="password" id="loginPassword" placeholder="Password" required />
-  <div id="loginError" class="error-message"></div>
-  <label class="remember">
-    <input type="checkbox" /> Remember me
-  </label>
-  <button type="submit">Login</button>
- <p class="login-register-tip">
-  Don't have an account? <a href="register.html">Register</a>
-</p>
-</form>
-
+  <!-- login modal 保持不变 -->
+  <div id="loginModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" id="closeLogin">&times;</span>
+      <h2>Login to GameWorld</h2>
+      <form id="loginForm">
+        <input
+          type="text"
+          id="loginEmail"
+          placeholder="Email or Username"
+          required
+          autocomplete="username"
+        />
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Password"
+          required
+          autocomplete="current-password"
+        />
+        <div id="loginError" class="error-message"></div>
+        <label class="remember">
+          <input type="checkbox" /> Remember me
+        </label>
+        <button type="submit">Login</button>
+        <p class="login-register-tip">
+          Don't have an account? <a href="register.html">Register</a>
+        </p>
+      </form>
+    </div>
   </div>
-</div>
 
-  <script src="js/links.js"></script>
-  <script src="js/login.js"></script>
-  <script type="module" src="js/auth.js"></script>
+  <!-- 现有脚本 -->
+  <script src="js/links.js" defer></script>
+  <script type="module" src="js/login.js" defer></script>
+  <script type="module" src="js/auth.js" defer></script>
+
+  <!-- 搜索逻辑脚本 -->
+  <script defer>
+    async function onSearch(e) {
+      e.preventDefault();
+      const ctr = document.getElementById("game-container");
+      ctr.textContent = "加载中…";
+
+      try {
+        const q = document.getElementById("game-query").value.trim();
+        const res = await fetch(
+          `/api/games?search=${encodeURIComponent(q)}`
+        );
+        if (!res.ok) throw new Error(res.statusText);
+        const data = await res.json();
+        const g = data.results?.[0];
+        if (!g) {
+          ctr.textContent = "未找到游戏";
+          return;
+        }
+
+        ctr.innerHTML = `
+          <h2>${g.name}</h2>
+          <img src="${g.background_image || ""}" alt="${g.name}"
+               style="max-width:100%; margin:1rem 0;">
+          <p><strong>发行日期：</strong>${g.released || "未知"}</p>
+          <p><strong>Metacritic 评分：</strong>${g.metacritic ?? "暂无"}</p>
+        `;
+      } catch (err) {
+        console.error(err);
+        ctr.textContent = "请求失败，请检查控制台";
+      }
+    }
+
+    document
+      .getElementById("game-search-form")
+      .addEventListener("submit", onSearch);
+  </script>
 </body>
 </html>

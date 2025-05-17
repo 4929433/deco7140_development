@@ -1,0 +1,148 @@
+[
+  {
+    "name": "Life is Strange",
+    "released": "2015-01-29",
+    "rating": 4.12,
+    "background_image": "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg",
+    "slug": "life-is-strange-episode-1-2",
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One",
+      "iOS",
+      "Android",
+      "macOS",
+      "Linux",
+      "Xbox 360",
+      "PlayStation 3"
+    ]
+  },
+  {
+    "name": "Limbo",
+    "released": "2010-07-21",
+    "rating": 4.14,
+    "background_image": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg",
+    "slug": "limbo",
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "PlayStation 4",
+      "Nintendo Switch",
+      "iOS",
+      "Android",
+      "macOS",
+      "Linux",
+      "Xbox 360",
+      "PlayStation 3",
+      "PS Vita"
+    ]
+  },
+  {
+    "name": "Terraria",
+    "released": "2011-05-16",
+    "rating": 4.07,
+    "background_image": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg",
+    "slug": "terraria",
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "PlayStation 4",
+      "Nintendo Switch",
+      "iOS",
+      "Android",
+      "Nintendo 3DS",
+      "macOS",
+      "Linux",
+      "Xbox 360",
+      "PlayStation 3",
+      "PS Vita",
+      "Wii U"
+    ]
+  },
+  {
+    "name": "Grand Theft Auto: San Andreas",
+    "released": "2004-10-26",
+    "rating": 4.5,
+    "background_image": "https://media.rawg.io/media/games/960/960b601d9541cec776c5fa42a00bf6c4.jpg",
+    "slug": "grand-theft-auto-san-andreas",
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "PlayStation 4",
+      "iOS",
+      "Android",
+      "macOS",
+      "Xbox 360",
+      "Xbox",
+      "PlayStation 3",
+      "PlayStation 2"
+    ]
+  },
+  {
+    "name": "Stardew Valley",
+    "released": "2016-02-25",
+    "rating": 4.4,
+    "background_image": "https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg",
+    "slug": "stardew-valley",
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "PlayStation 4",
+      "Nintendo Switch",
+      "iOS",
+      "Android",
+      "macOS",
+      "Linux",
+      "PS Vita"
+    ]
+  },
+  {
+    "name": "Little Nightmares",
+    "released": "2017-04-27",
+    "rating": 4.04,
+    "background_image": "https://media.rawg.io/media/games/8a0/8a02f84a5916ede2f923b88d5f8217ba.jpg",
+    "slug": "little-nightmares",
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "PlayStation 4",
+      "Nintendo Switch",
+      "iOS"
+    ]
+  },
+  {
+    "name": "Journey",
+    "released": "2012-03-13",
+    "rating": 4.32,
+    "background_image": "https://media.rawg.io/media/games/baf/baf9905270314e07e6850cffdb51df41.jpg",
+    "slug": "journey",
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "iOS",
+      "PlayStation 3"
+    ]
+  },
+  {
+    "name": "Minecraft",
+    "released": "2009-05-10",
+    "rating": 4.43,
+    "background_image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
+    "slug": "minecraft",
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "PlayStation 4",
+      "Nintendo Switch",
+      "iOS",
+      "Android",
+      "Nintendo 3DS",
+      "macOS",
+      "Linux",
+      "Xbox 360",
+      "PlayStation 3",
+      "PS Vita",
+      "Wii U"
+    ]
+  }
+]

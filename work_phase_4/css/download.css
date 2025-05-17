@@ -1,0 +1,103 @@
+.section-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background-color: #fcbf49;
+}
+
+.section-title::before {
+  left: -60px;
+}
+
+.section-title::after {
+  right: -60px;
+}
+
+
+.platform-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.platform-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #003049;
+}
+
+.platform-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.platform-card {
+  background: #2c3e50;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 260px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  min-height: 320px; 
+}
+
+.platform-card:hover {
+  transform: translateY(-5px);
+}
+
+.platform-card img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.platform-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.platform-card p {
+ flex-grow: 1; 
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.platform-btn {
+     display: inline-block;
+  margin-top: auto;
+  background-color: #8ec7ff;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.platform-btn:hover {
+  background-color:#00f7ff;
+}

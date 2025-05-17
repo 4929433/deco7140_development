@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>GameWorld</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css//download.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/work_phase_4/images/favicon-16x16.png"
+        /></head>
+        
+<header class="header">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
+    </a>
+  </div>
+
+  <nav class="nav">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+
+
+      <!--Top Games -->
+      <li class="nav-item dropdown">
+        <a href="Top games.html" class="nav-link">Top Games</a>
+        <ul class="dropdown-menu">
+          <li><a href="game1.html">Single-player</a></li>
+          <li><a href="game2.html">Online Games</a></li>
+          <li><a href="game3.html">Mobile Games</a></li>
+          <li><a href="community.html">Community Center</a></li>
+          <li><a href="Download.html">Download Center</a></li>
+          <li><a href="contect.html">Report an Issue</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a href="community.html">Community</a></li>
+      <li class="nav-item"><a href="Download.html">Download</a></li>
+      <li class="nav-item"><a href="About Us.html">About Us</a></li>
+
+      <li class="nav-item auth-group">
+        <a href="#" class="auth-link" id="openLogin">Login</a>
+        <span class="divider">|</span>
+        <a href="register.html" class="auth-link">Register</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+
+  
+  <body>
+  <main>
+<section class="download">
+  <div class="section-wrapper">
+ <h2 class="section-title">
+  Download Center</h2>
+</div>
+</section>
+
+
+  <div class="platform-grid">
+    <div class="platform-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam">
+      <h3>Steam</h3>
+      <p>The largest digital distribution platform for PC games.</p>
+      <a href="https://store.steampowered.com/" target="_blank" class="platform-btn">Visit Steam</a>
+    </div>
+
+    <div class="platform-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg" alt="Epic Games">
+      <h3>Epic Games</h3>
+      <p>Known for Fortnite and weekly free game giveaways.</p>
+      <a href="https://www.epicgames.com/store/en-US/" target="_blank" class="platform-btn">Visit Epic</a>
+    </div>
+
+    <div class="platform-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ubisoft_logo.svg/1024px-Ubisoft_logo.svg.png" alt="Ubisoft Connect">
+      <h3>Ubisoft Connect</h3>
+      <p>Ubisoft’s official launcher for titles like Assassin’s Creed and Far Cry.</p>
+      <a href="https://ubisoftconnect.com/" target="_blank" class="platform-btn">Visit Ubisoft</a>
+    </div>
+
+    <div class="platform-card">
+      <img src="https://logos-world.net/wp-content/uploads/2020/08/EA-Emblem.png" alt="EA App">
+      <h3>Electronic Arts</h3>
+      <p>Download FIFA, Sims, Battlefield and other EA titles.</p>
+      <a href="https://www.ea.com/ea-app" target="_blank" class="platform-btn">Visit EA</a>
+    </div>
+  </div>
+</section>
+<section class="download-notice">
+
+    <h2>Download Tips</h2>
+    <ul>
+      <li>✅ All downloads link to official stores like Steam, Epic, Riot, or publisher websites.</li>
+      <li>💡 Ensure you meet the system requirements before downloading.</li>
+      <li>🔒 Do not download .exe files from unofficial sources to avoid malware.</li>
+    </ul>
+    
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+  <footer class="footer">
+    
+    <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
+      <li class="footer-item"><a href="About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="contect.html">Find Us</a></li>
+    
+  </footer>
+
+
+
+
+  <!--login-->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLogin">&times;</span>
+    <h2>Login to GameWorld</h2>
+<form id="loginForm">
+  <input type="text" id="loginEmail" placeholder="Email or Username" required />
+  <input type="password" id="loginPassword" placeholder="Password" required />
+  <div id="loginError" class="error-message"></div>
+  <label class="remember">
+    <input type="checkbox" /> Remember me
+  </label>
+  <button type="submit">Login</button>
+ <p class="login-register-tip">
+  Don't have an account? <a href="register.html">Register</a>
+</p>
+</form>
+
+  </div>
+</div>
+
+  <script src="js/links.js"></script>
+  <script type="module" src="js/login.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

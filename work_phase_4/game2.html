@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>GameWorld</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/card.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/work_phase_4/images/favicon-16x16.png"
+        /></head>
+        
+<header class="header">
+  <div class="logo">
+    <a href="/work_phase_4/index.html" class="logo-link">
+      <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
+    </a>
+  </div>
+
+  <nav class="nav">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+
+
+
+      <!--Top Games -->
+      <li class="nav-item dropdown">
+        <a href="Top games.html" class="nav-link">Top Games</a>
+        <ul class="dropdown-menu">
+          <li><a href="game1.html">Single-player</a></li>
+          <li><a href="game2.html">Online Games</a></li>
+          <li><a href="game3.html">Mobile Games</a></li>
+          <li><a href="community.html">Community Center</a></li>
+          <li><a href="Download.html">Download Center</a></li>
+          <li><a href="contect.html">Report an Issue</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a href="community.html">Community</a></li>
+      <li class="nav-item"><a href="Download.html">Download</a></li>
+      <li class="nav-item"><a href="About Us.html">About Us</a></li>
+
+      <li class="nav-item auth-group">
+        <a href="#" class="auth-link" id="openLogin">Login</a>
+        <span class="divider">|</span>
+        <a href="register.html" class="auth-link">Register</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+
+  
+  <body>
+  <main>
+<section class="online-games">
+<div class="section-title-wrapper">
+  <h2 class="section-title">Top Online Games</h2>
+</div>
+
+  <div class="game-card-container" id="online-game-list"></div>
+</section>
+
+
+
+
+
+
+
+
+<script>
+fetch('game2.json')
+  .then(res => res.json())
+  .then(games => {
+    const container = document.getElementById('online-game-list');
+    games.forEach(game => {
+      const card = document.createElement('div');
+      card.className = 'game-card';
+      card.innerHTML = `
+        <a href="https://rawg.io/games/${game.slug}" target="_blank">
+          <img src="${game.background_image}" alt="${game.name}">
+          <h3>${game.name}</h3>
+          <p><strong>Release:</strong> ${game.released}</p>
+          <p><strong>Rating:</strong> ${game.rating} ⭐️</p>
+          <p><strong>Platforms:</strong> ${game.platforms.join(', ')}</p>
+        </a>
+      `;
+      container.appendChild(card);
+    });
+  });
+
+</script>
+
+<section id="review-section">
+  <h2>Leave a Review</h2>
+
+  <form id="reviewForm" class="review-form">
+ 
+    <div class="form-group">
+      <label for="username">Your Name</label>
+      <input type="text" name="username" id="username" placeholder="e.g. XuanX" required />
+    </div>
+
+ 
+    <div class="form-group">
+      <label for="game">Game Name</label>
+      <input type="text" name="game" id="game" placeholder="e.g. Valorant" required />
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Your Review</label>
+      <textarea name="comment" id="comment" placeholder="Write your thoughts about the game..." required></textarea>
+    </div>
+
+    <div class="form-group stars">
+      <label for="rating">How would you rate this game?</label>
+      <div class="star-rating">
+        <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
+        <input type="radio" name="rating" value="4" id="rate4"><label for="rate4">★</label>
+        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
+        <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
+        <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
+      </div>
+    </div>
+
+  
+    <div class="form-group">
+      <button type="submit" class="submit-btn">Submit Review</button>
+    </div>
+  </form>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+  <footer class="footer">
+    
+    <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
+      <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
+    
+  </footer>
+
+
+
+
+  <!--login-->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLogin">&times;</span>
+    <h2>Login to GameWorld</h2>
+<form id="loginForm">
+  <input type="text" id="loginEmail" placeholder="Email or Username" required />
+  <input type="password" id="loginPassword" placeholder="Password" required />
+  <div id="loginError" class="error-message"></div>
+  <label class="remember">
+    <input type="checkbox" /> Remember me
+  </label>
+  <button type="submit">Login</button>
+ <p class="login-register-tip">
+  Don't have an account? <a href="register.html">Register</a>
+</p>
+</form>
+
+  </div>
+</div>
+
+  <script src="js/links.js"></script>
+  <script type="module" src="js/login.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/submitreview.js"></script>
+</body>
+</html>

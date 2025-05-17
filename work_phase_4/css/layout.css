@@ -1,0 +1,57 @@
+.review-card {
+  background: #2c3e50;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1rem;
+}
+.review-card h3 {
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.review-card p {
+  margin: 0.3rem 0;
+  color: #ffffff;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background-color: #fcbf49;
+}
+
+.section-title::before {
+  left: -60px;
+}
+
+.section-title::after {
+  right: -60px;
+}

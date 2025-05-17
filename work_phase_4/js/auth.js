@@ -1,5 +1,5 @@
 // js/auth.js
-import { postFormData } from './modules/postformData.js';
+import { postFormData } from './modules/postFormData.js';
 import { fetchGetData }  from './modules/getData.js';
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/card.css" />
         <link
             rel="icon"
             type="image/x-icon"
@@ -29,27 +30,23 @@
     <div class="hamburger" id="hamburger">&#9776;</div>
     <ul class="nav-links" id="navLinks">
 
-      <li class="nav-item">
-        <form class="search-bar" action="/search" method="get">
-          <input type="text" name="q" placeholder="search" />
-          <button type="submit">🔍</button>
-        </form>
-      </li>
+
 
       <!--Top Games -->
       <li class="nav-item dropdown">
         <a href="Top games.html" class="nav-link">Top Games</a>
         <ul class="dropdown-menu">
-          <li><a href="/work_phase_4/gamepage/game1.html">Single-player</a></li>
-          <li><a href="/work_phase_4/gamepage/game2.html">Online Games</a></li>
-          <li><a href="/work_phase_4/gamepage/game3.html">Mobile Games</a></li>
-          <li><a href="community">Community Center</a></li>
+          <li><a href="game1.html">Single-player</a></li>
+          <li><a href="game2.html">Online Games</a></li>
+          <li><a href="game3.html">Mobile Games</a></li>
+          <li><a href="community.html">Community Center</a></li>
           <li><a href="Download.html">Download Center</a></li>
           <li><a href="contect.html">Report an Issue</a></li>
         </ul>
       </li>
 
       <li class="nav-item"><a href="community.html">Community</a></li>
+      <li class="nav-item"><a href="Download.html">Download</a></li>
       <li class="nav-item"><a href="About Us.html">About Us</a></li>
 
       <li class="nav-item auth-group">
@@ -66,15 +63,60 @@
   
   <body>
   <main>
-    <section class="hero">
-      <h1>Welcome to GameWorld</h1>
-      <p>Find, explore, and discuss your favorite games in one place.</p>
-    </section>
+  <section class="community">
+<div class="section-wrapper">
+ <h2 class="section-title">
+  Community-Reviews</h2> </div>
+ </section>
+<section id="community-reviews">
+  <div id="review-list" class="review-list"></div>
+</section>
+ 
 
 
 
 
 
+
+
+<section id="review-section">
+  <h2>Leave a Review</h2>
+
+  <form id="reviewForm" class="review-form">
+ 
+    <div class="form-group">
+      <label for="username">Your Name</label>
+      <input type="text" name="username" id="username" placeholder="e.g. XuanX" required />
+    </div>
+
+ 
+    <div class="form-group">
+      <label for="game">Game Name</label>
+      <input type="text" name="game" id="game" placeholder="e.g. Valorant" required />
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Your Review</label>
+      <textarea name="comment" id="comment" placeholder="Write your thoughts about the game..." required></textarea>
+    </div>
+
+    <div class="form-group stars">
+      <label for="rating">How would you rate this game?</label>
+      <div class="star-rating">
+        <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
+        <input type="radio" name="rating" value="4" id="rate4"><label for="rate4">★</label>
+        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
+        <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
+        <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
+      </div>
+    </div>
+
+  
+    <div class="form-group">
+      <button type="submit" class="submit-btn">Submit Review</button>
+    </div>
+  </form>
+</section>
 
 
 
@@ -90,8 +132,8 @@
   <footer class="footer">
     
     <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
-      <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
-      <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
+      <li class="footer-item"><a href="About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="contect.html">Find Us</a></li>
     
   </footer>
 
@@ -120,7 +162,9 @@
 </div>
 
   <script src="js/links.js"></script>
-  <script src="js/login.js"></script>
+  <script type="module" src="js/login.js"></script>
   <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/getreview.js"></script>
+  <script type="module" src="js/submitreview.js"></script>
 </body>
 </html>
