@@ -10,8 +10,9 @@
         <title>GameWorld</title>
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/card.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/searchbar.css" />
         <link
             rel="icon"
             type="image/x-icon"
@@ -29,12 +30,6 @@
     <div class="hamburger" id="hamburger">&#9776;</div>
     <ul class="nav-links" id="navLinks">
 
-      <li class="nav-item">
-        <form class="search-bar" action="/search" method="get">
-          <input type="text" name="q" placeholder="search" />
-          <button type="submit">🔍</button>
-        </form>
-      </li>
 
       <!--Top Games -->
       <li class="nav-item dropdown">
@@ -66,6 +61,74 @@
   
   <body>
   <main>
+  <section class="download">
+  <div class="section-wrapper">
+ <h2 class="section-title">
+  Search Results</h2>
+</div>
+</section>
+    <div id="filter-results" class="game-card-container"></div>
+    <p id="no-result" class="no-result" style="display:none;">No matching games found.</p>
+    
+    
+    
+    
+    <section class="hero-search">
+  <h1 class="hero-search__title">Find Your Next Favorite Game</h1>
+  <form id="game-search-form" class="hero-search__form">
+    
+    <input type="text" name="keyword" class="hero-search__input" placeholder="Search games..." />
+
+    <select name="platform" class="hero-search__select">
+      <option value="">All Platforms</option>
+      <option value="PC">PC</option>
+      <option value="PlayStation 4">PlayStation</option>
+      <option value="Xbox One">Xbox</option>
+      <option value="Nintendo Switch">Nintendo Switch</option>
+    <option value="iOS">iOS</option>
+  <option value="Android">Android</option>
+    </select>
+
+    <select name="year" class="hero-search__select">
+      <option value="">All Years</option>
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
+      <option value="2019">2019</option>
+    </select>
+
+    <select name="minRating" class="hero-search__select">
+      <option value="">Any Rating</option>
+      <option value="4.5">⭐ 4.5+</option>
+      <option value="4.0">⭐ 4.0+</option>
+      <option value="3.5">⭐ 3.5+</option>
+    </select>
+
+    <button type="submit" class="BTN">Search</button>
+  </form>
+  <script>
+  document.getElementById('game-search-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const keyword = e.target.keyword.value.trim();
+    const platform = e.target.platform.value;
+    const year = e.target.year.value;
+    const minRating = e.target.minRating.value;
+
+    const query = new URLSearchParams({
+      keyword,
+      platform,
+      year,
+      minRating
+    }).toString();
+
+    window.location.href = `search.html?${query}`;
+  });
+</script>
+
+</section>
 
 
 
@@ -119,6 +182,7 @@
   <script src="js/links.js"></script>
   <script type="module" src="js/login.js"></script>
   <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/filter.js"></script>
   <nav class="mobile-nav">
   <a href="index.html" class="mobile-nav__item">
     <span class="mobile-nav__icon">🏠</span>
@@ -139,11 +203,15 @@
     <span class="mobile-nav__icon">💬</span>
     <span class="mobile-nav__label">Community</span>
   </a>
-  <a href="download.html" class="mobile-nav__item">
+  <a href="Download.html" class="mobile-nav__item">
     <span class="mobile-nav__icon">⬇️</span>
     <span class="mobile-nav__label">Download</span>
   </a>
 
 </nav>
+<script src="js/links.js"></script>
+  <script type="module" src="js/login.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="js/filter.js"></script>
 </body>
 </html>

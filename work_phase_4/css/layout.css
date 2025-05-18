@@ -22,36 +22,5 @@
   color: #ffffff;
 }
 
-.section-wrapper {
-  display: flex;
-  justify-content: center;
-}
 
-.section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffffff;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  margin: 2rem 0;
-  padding: 0 1rem;
-}
 
-.section-title::before,
-.section-title::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 50px;
-  height: 2px;
-  background-color: #fcbf49;
-}
-
-.section-title::before {
-  left: -60px;
-}
-
-.section-title::after {
-  right: -60px;
-}

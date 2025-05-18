@@ -195,7 +195,7 @@
   }
 }
 
-/* 桌面端隐藏底部导航 */
+
 @media (min-width: 769px) {
   .mobile-nav { display: none; }
 }
@@ -203,3 +203,19 @@
   font-size: 2rem;   
   line-height: 1;     
 }
+
+.no-result {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 2rem;
+}
+
+.hero__title {
+  font-size: clamp(1.5rem, 5vw, 4rem); /* 最小1.5rem，最大3rem，随屏幕缩放 */
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+
