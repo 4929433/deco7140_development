@@ -1,4 +1,4 @@
-// js/register.js
+
 import { postFormData } from './modules/postFormData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form) return;
 
-  // 头像本地预览
+
   avatarInput?.addEventListener('change', () => {
     const file = avatarInput.files[0];
     if (file) {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     if (success) {
-      // 存储用户信息到 localStorage
+     
       const username = form.name.value.trim();
       const email    = form.email.value.trim();
       const pwd      = form.password.value;
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('password',   pwd);
       localStorage.setItem('avatar',     avatarUrl);
 
-      // 如果想要注册成功后自动弹登录，可在此设置 flag
+     
       localStorage.setItem('triggerLoginOnLoad', 'true');
 
-      // 跳回首页
+   
       window.location.href = 'index.html';
     } else {
       feedback.textContent = data.message || 'Registration failed.';

@@ -1,4 +1,4 @@
-// js/getReviews.js
+
 import { fetchGetData } from './modules/getData.js';
 
 document.addEventListener('DOMContentLoaded', () => {

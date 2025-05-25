@@ -1,11 +1,11 @@
-/* Contact 卡片整体布局 */
+
 .contact-section {
   display: flex;
   justify-content: center;
   padding: 4rem 1rem 2rem;
 }
 
-/* 卡片背景 */
+
 .form-card {
   background-color: #2c3e50;
   border: 1px solid #ddd;
@@ -16,7 +16,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* 标题 & 简介 */
+
 .form-card h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -30,7 +30,7 @@
   text-align: center;
 }
 
-/* 联系信息 */
+
 .contact-info p {
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
@@ -44,7 +44,7 @@
   text-decoration: underline;
 }
 
-/* 表单组 */
+
 #contact-form {
   margin-top: 1.5rem;
 }
@@ -91,7 +91,6 @@
   transform: scale(1.02);
 }
 
-/* 反馈信息 */
 .form-feedback {
   margin-top: 0.75rem;
   font-size: 0.9rem;
