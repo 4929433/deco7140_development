@@ -19,42 +19,37 @@
             href="/work_phase_4/images/favicon-16x16.png"
         /></head>
         
-<header class="header">
-  <div class="logo">
-    <a href="index.html" class="logo-link">
-      <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
-    </a>
-  </div>
-
-  <nav class="nav">
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="navLinks">
-
-
-      <!--Top Games -->
-      <li class="nav-item dropdown">
-        <a href="index.html" class="nav-link">Top Games</a>
-        <ul class="dropdown-menu">
-          <li><a href="game1.html">Single-player</a></li>
-          <li><a href="game2.html">Online Games</a></li>
-          <li><a href="game3.html">Mobile Games</a></li>
-          <li><a href="community.html">Community Center</a></li>
-          <li><a href="Download.html">Download Center</a></li>
-          <li><a href="contect.html">Report an Issue</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-item"><a href="community.html">Community</a></li>
-      <li class="nav-item"><a href="About Us.html">About Us</a></li>
-
-      <li class="nav-item auth-group">
-        <a href="#" class="auth-link" id="openLogin">Login</a>
-        <span class="divider">|</span>
-        <a href="register.html" class="auth-link">Register</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
+      </a>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item dropdown">
+          <a href="index.html" class="nav-link">Top Games</a>
+          <ul class="dropdown-menu">
+            <li><a href="game1.html">Single-player</a></li>
+            <li><a href="game2.html">Online Games</a></li>
+            <li><a href="game3.html">Mobile Games</a></li>
+            <li><a href="community.html">Community Center</a></li>
+            <li><a href="Download.html">Download Center</a></li>
+            <li><a href="contect.html">Report an Issue</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="community.html">Community</a></li>
+        <li class="nav-item"><a href="Download.html">Download</a></li>
+        <li class="nav-item"><a href="About Us.html">About Us</a></li>
+        <li class="nav-item auth-group">
+          <a href="#" class="auth-link" id="openLogin">Login</a>
+          <span class="divider">|</span>
+          <a href="register.html" class="auth-link">Register</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
 
 
@@ -75,39 +70,42 @@
     
     <section class="hero-search">
   <h1 class="hero-search__title">Find Your Next Favorite Game</h1>
-  <form id="game-search-form" class="hero-search__form">
-    
-    <input type="text" name="keyword" class="hero-search__input" placeholder="Search games..." />
+<form id="game-search-form" class="hero-search__form">
 
-    <select name="platform" class="hero-search__select">
-      <option value="">All Platforms</option>
-      <option value="PC">PC</option>
-      <option value="PlayStation 4">PlayStation</option>
-      <option value="Xbox One">Xbox</option>
-      <option value="Nintendo Switch">Nintendo Switch</option>
-    <option value="iOS">iOS</option>
-  <option value="Android">Android</option>
-    </select>
+  <label for="keyword" class="sr-only">Search games</label>
+  <input type="text" id="keyword" name="keyword" class="hero-search__input" placeholder="Search games..." />
 
-    <select name="year" class="hero-search__select">
-      <option value="">All Years</option>
-      <option value="2024">2024</option>
-      <option value="2023">2023</option>
-      <option value="2022">2022</option>
-      <option value="2021">2021</option>
-      <option value="2020">2020</option>
-      <option value="2019">2019</option>
-    </select>
+  <label for="platform" class="sr-only">Select Platform</label>
+  <select id="platform" name="platform" class="hero-search__select">
+    <option value="">All Platforms</option>
+    <option value="PC">PC</option>
+    <option value="PlayStation 4">PlayStation</option>
+    <option value="Xbox One">Xbox</option>
+    <option value="Nintendo Switch">Nintendo Switch</option>
+    <option value="Mobile">Mobile</option>
+  </select>
 
-    <select name="minRating" class="hero-search__select">
-      <option value="">Any Rating</option>
-      <option value="4.5">⭐ 4.5+</option>
-      <option value="4.0">⭐ 4.0+</option>
-      <option value="3.5">⭐ 3.5+</option>
-    </select>
+  <label for="year" class="sr-only">Select Year</label>
+  <select id="year" name="year" class="hero-search__select">
+    <option value="">All Years</option>
+    <option value="2024">2024</option>
+    <option value="2023">2023</option>
+    <option value="2022">2022</option>
+    <option value="2021">2021</option>
+    <option value="2020">2020</option>
+    <option value="2019">2019</option>
+  </select>
 
-    <button type="submit" class="BTN">Search</button>
-  </form>
+  <label for="minRating" class="sr-only">Select Rating</label>
+  <select id="minRating" name="minRating" class="hero-search__select">
+    <option value="">Any Rating</option>
+    <option value="4.5">⭐ 4.5+</option>
+    <option value="4.0">⭐ 4.0+</option>
+    <option value="3.5">⭐ 3.5+</option>
+  </select>
+
+  <button type="submit" class="BTN">Search</button>
+</form>
   <script>
   document.getElementById('game-search-form').addEventListener('submit', function (e) {
     e.preventDefault();
