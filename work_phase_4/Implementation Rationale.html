@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>GameWorld</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/card.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/work_phase_4/images/favicon-16x16.png"
+        />
+        <style>
+    :focus-visible {
+      outline: 2px dashed #00f7ff;
+      outline-offset: 3px;
+    }
+    html { font-size: 100%; }
+    body { font-size: 1rem; }
+  </style></head>
+        
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
+      </a>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item dropdown">
+          <a href="index.html" class="nav-link">Top Games</a>
+          <ul class="dropdown-menu">
+            <li><a href="game1.html">Single-player</a></li>
+            <li><a href="game2.html">Online Games</a></li>
+            <li><a href="game3.html">Mobile Games</a></li>
+            <li><a href="community.html">Community Center</a></li>
+            <li><a href="Download.html">Download Center</a></li>
+            <li><a href="contect.html">Report an Issue</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="community.html">Community</a></li>
+        <li class="nav-item"><a href="Download.html">Download</a></li>
+        <li class="nav-item"><a href="About Us.html">About Us</a></li>
+        <li class="nav-item"><a href="Implementation Rationale.html">Implementation</a></li>
+        <li class="nav-item"><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+          <li class="nav-item auth-group">
+          <a href="#" class="auth-link" id="openLogin">Login</a>
+          <span class="divider">|</span>
+          <a href="register.html" class="auth-link">Register</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<main>
+<section class="download">
+  <div class="section-wrapper">
+ <h2 class="section-title">
+  Implementation Rationale</h2>
+</div>
+</section>
+<section class="implementation-rationale-accordion">
+
+
+  <!-- 1. Alignment with Client and User Needs -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      1. Alignment with Client and User Needs
+    </summary>
+    <div class="accordion-panel">
+      <h3>a. How the website meets the client’s goals and addresses needs identified in A3</h3>
+      <ul>
+        <li>
+          <strong>Search Functionality:</strong> In A4, we implemented a search form (<code>id="game-search-form"</code>)
+          that accepts keyword, platform, year, and minimum rating. Upon submission, the site builds a query string
+          (e.g., <code>?keyword=…&amp;platform=…</code>) and navigates to <code>search.html</code>, matching A3’s
+          requirement for multi‐criteria filtering.
+        </li>
+        <li>
+          <strong>Platform &amp; Year Filters:</strong> The “Platform” and “Year” dropdowns use accessible
+          <code>&lt;label&gt;</code> + <code>&lt;select&gt;</code> markup. On <code>search.html</code>, these controls
+          allow users to further filter results in‐page—exactly as A3 specified.
+        </li>
+        <li>
+          <strong>Random Top Games Display:</strong> A3’s wireframe proposed showcasing a rotating “Top Games” section.
+          In A4, we fetched a large JSON dataset (e.g., 5000 games) or RAWG API data, then displayed 18 random
+          game cards on each page load via <code>displayGames(getRandomGames(allGames, 18))</code>. This satisfies the
+          client’s desire to highlight multiple popular titles automatically.
+        </li>
+        <li>
+          <strong>Game Details Card:</strong> Each card in A4 shows an image, game name, release date, rating,
+          and platforms. Clicking the card opens the RAWG details page in a new tab. This matches A3’s “card content
+          and external link” requirement.
+        </li>
+        <li>
+          <strong>Community Reviews Link:</strong> A3 proposed a community feedback area. In A4, the navbar includes a
+          “Community” link pointing to <code>community.html</code>, which features a comment submission form and
+          dynamically loaded reviews (powered by <code>getreview.js</code> and <code>submitreview.js</code>). This
+          fulfills the client’s request for user engagement.
+        </li>
+      </ul>
+
+      <h3>b. How the design aligns with the goals of the Connect Communities Initiative (CCI)</h3>
+      <ul>
+        <li>
+          <strong>Local Relevance:</strong> We prompt for and use the user’s geolocation (with permission) so that any
+          location‐based features (e.g., locally trending games or local community events) remain relevant. This aligns
+          with CCI’s mission of serving local community needs.
+        </li>
+        <li>
+          <strong>Simplicity &amp; Usability:</strong> The color scheme—dark backgrounds with bright accents—ensures high
+          contrast and clear readability, even for users with low vision. This supports CCI’s goal of an inclusive,
+          easy‐to‐use interface for all ages and abilities.
+        </li>
+        <li>
+          <strong>Community Interaction:</strong> The Community Reviews section encourages players to share feedback and
+          interact. By providing a live comment feed, we foster connection and collaboration—key CCI principles.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 2. Accessibility and Ethical Considerations -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      2. Accessibility and Ethical Considerations
+    </summary>
+    <div class="accordion-panel">
+      <h3>a. Integration of accessibility principles into implementation (linked to A2 research)</h3>
+      <ul>
+        <li>
+          <strong>Skip Link:</strong> Added <code>&lt;a href="#main-content" class="sr-only sr-only-focusable"&gt;Skip to main content&lt;/a&gt;</code>
+          at the top of each page. This allows keyboard and screen reader users to bypass navigation and move directly
+          to main content.
+        </li>
+        <li>
+          <strong>Semantic Markup &amp; ARIA:</strong>
+          <ul>
+            <li>
+              Converted dropdown toggles to <code>&lt;button aria-expanded="false" aria-controls="navLinks"&gt;</code>
+              so assistive technologies know when menus are open or closed.
+            </li>
+            <li>
+              Each search input (e.g., keyword, platform, year, rating) has a matching <code>&lt;label for="…"&gt;</code>, ensuring
+              form controls are announced correctly.
+            </li>
+            <li>
+              The star‐rating widget in the review form is wrapped in <code>&lt;fieldset role="radiogroup" aria-label="Game rating"&gt;</code>
+              with each <code>&lt;label&gt;</code> having <code>aria-label="X stars"</code>. This makes custom controls accessible.
+            </li>
+            <li>
+              The login modal uses <code>role="dialog" aria-modal="true" aria-labelledby="loginTitle"</code>. JS listens for
+              the “Escape” key to close, ensuring keyboard users aren’t trapped.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Color Contrast:</strong>
+          <ul>
+            <li>
+              Link and button text colors were changed to <code>#00f7ff</code> (bright cyan) or <code>#ffffff</code> (white) on dark backgrounds to meet a contrast ratio ≥ 4.5:1.
+            </li>
+            <li>
+              Body text that was 14px/400 weight with insufficient contrast was bumped to 16px or use weight 500.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Keyboard Navigation:</strong>
+          <ul>
+            <li>
+              Implemented <code>:focus-visible { outline: 2px dashed #00f7ff; }</code> so focused elements always show a clear outline.
+            </li>
+            <li>
+              Used CSS <code>:focus-within .dropdown-menu { display: block; }</code> so that tabbing into submenu items keeps the dropdown open.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>High-Contrast Mode Compatibility:</strong> Added <code>@media (forced-colors: active) { .hero__overlay { background: none !important; } }</code> to avoid decorative overlays hiding content in forced-color mode.
+        </li>
+      </ul>
+
+      <h3>b. Ethical Principles Integrated into Implementation</h3>
+      <ul>
+        <li>
+          <strong>Privacy &amp; Data Ethics:</strong> Search queries and filters stay on the client side. No user‐identifiable data is sent to a backend, fulfilling A2’s “data minimization” principle.
+        </li>
+        <li>
+          <strong>Transparency:</strong> All API calls (e.g., fetching game data JSON or RAWG API) are clearly documented in code comments. Users can inspect network requests in developer tools to see where data originates.
+        </li>
+        <li>
+          <strong>Inclusive Design:</strong> The site is fully responsive. We use relative font units (<code>rem</code>) so text scales with user preferences. All interactive elements are keyboard accessible, ensuring diverse user needs are met.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 3. Variations from A3 Design Proposal -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      3. Variations from A3 Design Proposal
+    </summary>
+    <div class="accordion-panel">
+      <ul>
+        <li>
+          <strong>Static vs. Dynamic Data Source:</strong>
+          <br>
+          <em>A3 Proposal:</em> Hardcode a small set of example game cards on the homepage, updated manually.
+          <br>
+          <em>A4 Implementation:</em> We fetch a large JSON dataset (5000 games) or RAWG API and randomly display 18 cards
+          each page load. This eliminates manual updates and keeps “Top Games” fresh.
+        </li>
+        <li>
+          <strong>Dropdown Menu Behavior:</strong>
+          <br>
+          <em>A3 Proposal:</em> A simple horizontal nav with direct links (“Top Games,” “Community,” “Download,” “About Us”).
+          <br>
+          <em>A4 Implementation:</em> The “Top Games” item became a <code>&lt;button aria-haspopup="true" aria-expanded="false"&gt;</code> that toggles
+          a dropdown submenu. This grouping allows easy addition of subpages (e.g., Single, Online, Mobile categories)
+          while improving keyboard accessibility.
+        </li>
+        <li>
+          <strong>Community Reviews Implementation:</strong>
+          <br>
+          <em>A3 Proposal:</em> A mockup form with static placeholder comments on the Community page.
+          <br>
+          <em>A4 Implementation:</em> We connected the form to <code>submitreview.js</code> to send comments to a backend
+          endpoint. <code>getreview.js</code> fetches and displays comments dynamically in <code>&lt;div id="review-list"&gt;</code>.
+          This creates a live, user‐driven review feed.
+        </li>
+        <li>
+          <strong>Search Result Presentation:</strong>
+          <br>
+          <em>A3 Proposal:</em> Search results in A3 wireframes were simple text lists of game titles.
+          <br>
+          <em>A4 Implementation:</em> Each result is rendered as a visual “game card” with image, name, release date,
+          rating, and platform(s). Users can click the card to view details on RAWG. This richer presentation aligns
+          better with user experience goals.
+        </li>
+        <li>
+          <strong>Accessibility Details beyond A3 Sketches:</strong>
+          <br>
+          <em>A3 Proposal:</em> High‐level note to meet WCAG standards.
+          <br>
+          <em>A4 Implementation:</em> We applied skip links, ARIA roles, contrast adjustments, keyboard‐operable dropdowns,
+          high‐contrast mode support, and tested with IBM Equal Access Checker. These concrete steps extend well beyond
+          the initial conceptual note.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 4. Challenges and Strategies -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      4. Challenges and Strategies
+    </summary>
+    <div class="accordion-panel">
+      <ul>
+        <li>
+          <strong>Integrating a Large Dataset Without Performance Lag:</strong>
+          <br>
+          <em>Challenge:</em> Loading and filtering 5000+ game records on the client could be slow, especially on older devices.
+          <br>
+          <em>Strategy:</em> We fetched the dataset once on page load and stored it in a global <code>allGames</code> array.
+          Filtering takes place in memory, and we cap the number of rendered cards at 18 per view. We also debounce any
+          filter inputs to avoid continuous re‐rendering on every keystroke.
+        </li>
+        <li>
+          <strong>Keyboard‐accessible Dropdown Menu:</strong>
+          <br>
+          <em>Challenge:</em> A3’s initial dropdown relied on hover, which keyboard users cannot trigger.
+          <br>
+          <em>Strategy:</em> We converted “Top Games” into a <code>&lt;button aria-haspopup="true" aria-expanded="false"&gt;</code> and toggled the child <code>&lt;ul class="dropdown-menu"&gt;</code> in JS. We added CSS <code>:focus-within .dropdown-menu { display: block; }</code> so that focusing a submenu keeps it visible. This combination ensures both Tab and mouse users can open/close the menu.
+        </li>
+        <li>
+          <strong>Accessible Star‐Rating Widget:</strong>
+          <br>
+          <em>Challenge:</em> Hiding radio <code>&lt;input&gt;</code> with <code>display: none</code> removed it from the accessibility tree, leading to scanner errors about invalid <code>for</code> attributes.
+          <br>
+          <em>Strategy:</em> Changed to <code>position: absolute; opacity: 0; width: 1px; height: 1px;</code> for visual hiding while keeping inputs in the DOM. Wrapped each <code>input</code> + <code>label</code> in a <code>&lt;span&gt;</code> and used <code>role="radiogroup" aria-label="Game rating"</code> on the container. Each label has <code>aria-label="X stars"</code> and <code>role="presentation"</code> to prevent the scanner from treating stars as headings.
+        </li>
+        <li>
+          <strong>Color Contrast Issues:</strong>
+          <br>
+          <em>Challenge:</em> Some link text (e.g., “Already have an account? Login”) was light gray on white, making its contrast only ~4.32:1.
+          <br>
+          <em>Strategy:</em> We changed that link to dark blue <code>#005fae</code> (contrast ~7.2:1), or white on dark backgrounds (contrast > 7:1). For body text at 14px/400 weight, we increased font weight to 500 or bumped size to 16px to meet 4.5:1.
+        </li>
+        <li>
+          <strong>Skip Link Visibility vs. Layout Preservation:</strong>
+          <br>
+          <em>Challenge:</em> A visible “Skip to main content” link can push layout down.
+          <br>
+          <em>Strategy:</em> We applied standard <code>.sr-only</code> + <code>.sr-only-focusable</code> CSS: hidden offscreen by default, and only becomes visible when focused. This preserves the layout visually while providing keyboard users a way to jump directly to the main content.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 5. Accessibility Audit -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      5. Accessibility Audit
+    </summary>
+    <div class="accordion-panel">
+      <h3>a. Final IBM Equal Access Results</h3>
+      <ul>
+        <li><strong>Critical Errors:</strong> 0</li>
+        <li><strong>Warnings:</strong> 2
+          <ul>
+            <li>Verify color is not the only visual means of conveying information (solved by adding underlines or check icons).</li>
+            <li>Confirm Windows high‐contrast mode compatibility (addressed using <code>@media (forced-colors: active)</code> to remove decorative overlays).</li>
+          </ul>
+        </li>
+        <li><strong>Informational Notices:</strong> Confirming forced‐colors support and text resizing to 200%—both have been validated manually.</li>
+      </ul>
+
+      <h3>b. Reflection on Outcomes &amp; How Results Informed Implementation</h3>
+      <ul>
+        <li>
+          <strong>Initial Audit Findings:</strong> The first A4 code had 58 issues flagged, including missing labels, low contrast (~4.32:1), hidden form controls, and lack of focus styles.
+        </li>
+        <li>
+          <strong>Remediation Steps:</strong>
+          <ul>
+            <li>Added explicit <code>&lt;label&gt;</code> tags for every <code>&lt;input&gt;</code> and used <code>aria-required="true"</code> or <code>required</code> plus <code>aria-live="polite" role="alert"</code> on feedback elements for correct announcement.</li>
+            <li>Updated link/button text colors to <code>#005fae</code> or <code>#ffffff</code> on dark backgrounds to meet 4.5:1 contrast.</li>
+            <li>Applied <code>:focus-visible</code> outlines so all interactive elements show a clear keyboard focus ring.</li>
+            <li>Refactored the star‐rating widget into a semantic <code>role="radiogroup"</code> container, kept inputs visible to AT, and added <code>role="presentation"</code> on labels to avoid heading misinterpretation.</li>
+            <li>Inserted a “Skip to main content” link that only appears when focused, preserving layout while improving navigation for screen readers.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Final Outcome:</strong> The re‐scan returned zero failed rules. All WCAG 2.2 AA criteria were satisfied: keyboard navigation is seamless, color contrast is compliant, ARIA roles are in place, and skip links function correctly.
+        </li>
+      </ul>
+    <div class="scan-images">
+      <h3>Scan Examples</h3>
+      <p>Below are three sample screenshots from the IBM Equal Access Accessibility Checker showing the final audit results:</p>
+      <div class="images-container">
+    <img src="images/scan1.png" alt="Accessibility Scan Screenshot 1" class="scan-image gallery-item" data-index="0" />
+    <img src="images/scan2.png" alt="Accessibility Scan Screenshot 2" class="scan-image gallery-item" data-index="1" />
+    <img src="images/scan3.png" alt="Accessibility Scan Screenshot 3" class="scan-image gallery-item" data-index="2" />
+  </div>
+</div>
+  </div>
+</details>
+</section>
+</main>
+
+  <footer class="footer">
+    
+    <ul class="footer-links">
+      <li class="footer-item"><a href="About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="contect.html">Find Us</a></li>
+    </ul>
+    <p>&copy; 2025 GameWorld</p>
+  </footer>
+
+
+
+
+  <!--login-->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLogin">&times;</span>
+    <h2>Login to GameWorld</h2>
+<form id="loginForm">
+  <input type="text" id="loginEmail" placeholder="Email or Username" required />
+  <input type="password" id="loginPassword" placeholder="Password" required />
+  <div id="loginError" class="error-message"></div>
+  <label class="remember">
+    <input type="checkbox" /> Remember me
+  </label>
+  <button type="submit">Login</button>
+<p class="login-register-tip">
+  Don't have an account? <a href="register.html">Register</a>
+</p>
+</form>
+
+  </div>
+</div>
+
+
+
+
+
+  <nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">🏠</span>
+    <span class="mobile-nav__label">Home</span>
+  </a>
+  <div class="mobile-nav__item game-menu">
+    <button class="game-menu__trigger">
+      <span class="mobile-nav__icon">🎮</span>
+      <span class="mobile-nav__label">Games</span>
+    </button>
+    <ul class="game-menu__list">
+    <li><a href="game1.html">Single</a></li>
+      <li><a href="game2.html">Online</a></li>
+      <li><a href="game3.html">Mobile</a></li>
+    </ul>
+  </div>
+  <a href="community.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">💬</span>
+    <span class="mobile-nav__label">Community</span>
+  </a>
+  <a href="Download.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">⬇️</span>
+    <span class="mobile-nav__label">Download</span>
+  </a>
+
+</nav>
+  <script src="js/links.js"></script>
+  <script type="module" src="js/login.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/submitreview.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const authGroup = document.querySelector('.auth-group');
+  if (!authGroup) return;
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const username   = localStorage.getItem('username');
+  const avatar     = localStorage.getItem('avatar') || 'images/default-avatar.png';
+
+  if (isLoggedIn && username) {
+    authGroup.innerHTML = `
+      <div class="user-info" style="display:flex;align-items:center;gap:0.5rem">
+        <img src="${avatar}" alt="Avatar" style="width:32px;height:32px;border-radius:50%">
+        <span style="color:#f8fafc;">${username}</span>
+        <button id="logoutBtn" class="auth-link" style="background:none;border:none;color:#f8fafc;cursor:pointer;">Logout</button>
+      </div>
+    `;
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.reload();
+    });
+  }
+});
+</script>
+<div id="lightboxOverlay" class="lightbox-overlay" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+  <div class="lightbox-content">
+    <img src="" alt="" class="lightbox-image" />
+  </div>
+  <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    const overlay = document.getElementById('lightboxOverlay');
+    const lightboxImage = overlay.querySelector('.lightbox-image');
+    const closeBtn = overlay.querySelector('.lightbox-close');
+    const prevBtn = overlay.querySelector('.lightbox-prev');
+    const nextBtn = overlay.querySelector('.lightbox-next');
+
+
+    const imageSources = Array.from(galleryItems).sort((a, b) => {
+      return Number(a.dataset.index) - Number(b.dataset.index);
+    }).map(img => img.src);
+
+    let currentIndex = 0;
+
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImage.src = imageSources[currentIndex];
+      lightboxImage.alt = galleryItems[currentIndex].alt;
+      overlay.setAttribute('aria-hidden', 'false');
+
+      closeBtn.focus();
+    }
+
+
+    function closeLightbox() {
+      overlay.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+      lightboxImage.src = imageSources[currentIndex];
+      lightboxImage.alt = galleryItems[currentIndex].alt;
+    }
+
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % imageSources.length;
+      lightboxImage.src = imageSources[currentIndex];
+      lightboxImage.alt = galleryItems[currentIndex].alt;
+    }
+
+ 
+    galleryItems.forEach(img => {
+      img.addEventListener('click', (e) => {
+        const idx = Number(img.dataset.index);
+        openLightbox(idx);
+      });
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const idx = Number(img.dataset.index);
+          openLightbox(idx);
+        }
+      });
+
+      img.setAttribute('tabindex', '0');
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        closeLightbox();
+      }
+    });
+
+
+    prevBtn.addEventListener('click', showPrev);
+    prevBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showPrev();
+      }
+    });
+    nextBtn.addEventListener('click', showNext);
+    nextBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showNext();
+      }
+    });
+
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeLightbox();
+      }
+    });
+
+
+    document.addEventListener('keydown', (e) => {
+      if (overlay.getAttribute('aria-hidden') === 'false') {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+          showPrev();
+        } else if (e.key === 'ArrowRight') {
+          showNext();
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -214,3 +214,6 @@ main {
   white-space: nowrap;
   border: 0;
 }
+.star-rating label {
+  display: inline-block;
+}

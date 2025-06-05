@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>GameWorld</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/card.css" />
+          <link rel="stylesheet" href="css/components.css" />
+
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="/work_phase_4/images/favicon-16x16.png"
+        />
+        <style>
+    :focus-visible {
+      outline: 2px dashed #00f7ff;
+      outline-offset: 3px;
+    }
+    html { font-size: 100%; }
+    body { font-size: 1rem; }
+  </style></head>
+        
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="GameWorld Logo" class="logo-img" />
+      </a>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item dropdown">
+          <a href="index.html" class="nav-link">Top Games</a>
+          <ul class="dropdown-menu">
+            <li><a href="game1.html">Single-player</a></li>
+            <li><a href="game2.html">Online Games</a></li>
+            <li><a href="game3.html">Mobile Games</a></li>
+            <li><a href="community.html">Community Center</a></li>
+            <li><a href="Download.html">Download Center</a></li>
+            <li><a href="contect.html">Report an Issue</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="community.html">Community</a></li>
+        <li class="nav-item"><a href="Download.html">Download</a></li>
+        <li class="nav-item"><a href="About Us.html">About Us</a></li>
+        <li class="nav-item"><a href="Implementation Rationale.html">Implementation</a></li>
+        <li class="nav-item"><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+          <li class="nav-item auth-group">
+          <a href="#" class="auth-link" id="openLogin">Login</a>
+          <span class="divider">|</span>
+          <a href="register.html" class="auth-link">Register</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<main>
+<section class="download">
+  <div class="section-wrapper">
+ <h2 class="section-title">
+  Gen AI</h2>
+</div>
+</section>
+<section class="implementation-rationale-accordion">
+
+  <!-- 1. Acknowledgement of GenAI/MT Use -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      1. Acknowledgement of GenAI/MT Use
+    </summary>
+    <div class="accordion-panel">
+      <p>
+        I hereby acknowledge that, in the creation of the GameWorld website and all accompanying documentation
+        (including the Implementation Rationale, Accessibility Audit, and other deliverables), I have made use
+        of Generative AI tools (specifically OpenAI’s ChatGPT) to assist with:
+      </p>
+      <ul>
+        <li>Generating explanatory text, rationale, and design justification.</li>
+        <li>Suggesting and refining accessibility improvements.</li>
+        <li>Providing code snippets and CSS/HTML examples.</li>
+        <li>Drafting reflections, guides, and checklist items.</li>
+        <li>Translating or paraphrasing framework language where needed.</li>
+      </ul>
+      <p>
+        All content produced by GenAI has been critically reviewed, edited for accuracy, and integrated with my
+        own expertise. I have not presented any AI‐generated content as solely my own original thought, and where
+        applicable, I have verified or modified AI‐assisted outputs to ensure correctness, clarity, and alignment
+        with project goals.
+      </p>
+    </div>
+  </details>
+
+  <!-- 2. Completed GenAI/MT Usage Checklist -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      2. Completed GenAI/MT Usage Checklist
+    </summary>
+    <div class="accordion-panel">
+      <p>Below is a summary of how each step in the GenAI/MT Usage Framework has been followed and documented:</p>
+      <ul>
+        <li>
+          <strong>Transparency &amp; Disclosure:</strong>
+          <br />
+          I clearly disclosed my use of ChatGPT in this webpage under “Acknowledgement of GenAI/MT Use.”
+        </li>
+        <li>
+          <strong>Purpose &amp; Context:</strong>
+          <br />
+          I used GenAI primarily for drafting text (rationale, audit explanations, reflections), generating sample
+          code snippets (HTML/CSS/JavaScript), and formulating accessibility best practices in alignment with WCAG 2.2 AA.
+        </li>
+        <li>
+          <strong>Critical Evaluation:</strong>
+          <br />
+          After obtaining AI‐generated content, I thoroughly reviewed each suggestion for technical accuracy,
+          consistency with the A3/A4 design, and compliance with accessibility standards. I modified or rewrote
+          any portions that were incorrect, unclear, or incomplete.
+        </li>
+        <li>
+          <strong>Ethical &amp; Responsible Use:</strong>
+          <br />
+          I ensured that no personal or sensitive data (e.g., user credentials or private information) was submitted
+          to the AI service. I only requested general coding guidance, design rationale, or documentation support—never
+          proprietary or confidential client data.
+        </li>
+        <li>
+          <strong>Attribution:</strong>
+          <br />
+          I have attributed all AI‐generated portions in this acknowledgement page and the related Implementation
+          Rationale to ChatGPT, indicating that the final content was edited and approved by me.
+        </li>
+        <li>
+          <strong>Future Planning:</strong>
+          <br />
+          I reflected on how GenAI might be reused responsibly in later iterations of this project (see Section 3 below).
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 3. Reflection on GenAI/MT Usage -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      3. Reflection on GenAI/MT Usage
+    </summary>
+    <div class="accordion-panel">
+      <h3>a. How These Tools Supported My Creativity, Technical Proficiency, and Problem‐Solving</h3>
+      <ul>
+        <li>
+          <strong>Accessibility‐Focused Guidance:</strong>
+          <br />
+          When I ran the IBM Equal Access Accessibility Checker on my pages, several WCAG 2.2 AA issues appeared
+          (e.g., “for=rateX not matching an ID,” “low contrast: 4.32:1,” “focus indicators missing”). By describing
+          each specific warning to ChatGPT, I received targeted recommendations on how to fix them. For example:
+          <ul>
+            <li>
+              ChatGPT suggested replacing <code>display: none</code> with <code>position: absolute; opacity: 0</code>
+              to keep hidden form controls (star‐rating inputs) in the accessibility tree.
+            </li>
+            <li>
+              It recommended adding
+              <code>:focus-visible { outline: 2px dashed #00f7ff; }</code> for all interactive elements so keyboard
+              users can always see focus.
+            </li>
+            <li>
+              It helped me identify the proper ARIA roles (e.g.,
+              <code>role="radiogroup" aria-label="Game rating"</code>) and fix invalid <code>for</code> attributes
+              by ensuring each <code>&lt;label&gt;</code> matched a valid <code>&lt;input id="…"/&gt;</code>.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Rapid Code Iteration:</strong>
+          <br />
+          Instead of manually searching dozens of web resources to remedy each audit warning, I asked ChatGPT to
+          “provide a minimal CSS snippet to ensure text contrast ≥ 4.5:1 for a link on a white background.” It
+          returned specific color codes and a formula for calculating contrast that I applied immediately to my CSS,
+          accelerating my workflow and reducing trial‐and‐error.
+        </li>
+      </ul>
+
+      <h3>b. Challenges Encountered When Using GenAI/MT and How I Addressed Them</h3>
+      <ul>
+        <li>
+          <strong>Overcorrection Risk:</strong>
+          <br />
+          Early AI suggestions sometimes over‐compensated—for instance, recommending colors so dark they clashed with
+          the site’s design. To avoid sacrificing aesthetics, I tested each proposed color pair against a contrast
+          checker and adjusted to a slightly lighter shade that still passed the 4.5:1 threshold.
+        </li>
+        <li>
+          <strong>Context Misalignment:</strong>
+          <br />
+          ChatGPT occasionally offered generic ARIA patterns without knowing my exact HTML structure. For example, it
+          suggested wrapping a form in <code>&lt;div role="form"&gt;</code> when I already used a semantic
+          <code>&lt;form&gt;</code> tag. I addressed this by clarifying the context—“In my code, I already use
+          <code>&lt;form&gt;</code> for the review section; how should I specifically adapt my star‐rating to fix the
+          audit error?”—and then refined its answers to fit my existing markup.
+        </li>
+      </ul>
+
+      <h3>c. Specific Strategies Used to Critically Evaluate and Refine AI Output</h3>
+      <ul>
+        <li>
+          <strong>Line‐by‐Line Testing Against the Scanner:</strong>
+          <br />
+          For each AI‐suggested fix, I immediately put the modified code into my local dev environment and reran the
+          IBM audit. If a warning persisted (e.g., “Text contrast 4.32:1”), I asked ChatGPT for alternative approaches
+          (such as bumping font weight from 400 to 500) until the audit passed.
+        </li>
+        <li>
+          <strong>Cross‐Referencing Official Specs:</strong>
+          <br />
+          Whenever ChatGPT recommended a new ARIA attribute or CSS rule, I double‐checked MDN Web Docs and W3C WCAG 2.2
+          guidelines to confirm it was correctly applied. For instance, I validated that the
+          <code>aria-live="polite"</code> region for form feedback would announce errors in the correct order.
+        </li>
+        <li>
+          <strong>Peer Validation:</strong>
+          <br />
+          I shared the updated snippets with a classmate, asking them to run the same accessibility checker. Their
+          feedback confirmed that AI‐informed adjustments (like moving <code>&lt;label&gt;</code> elements and adding
+          skip links) resolved the issues consistently across different machines.
+        </li>
+      </ul>
+
+      <h3>d. How These Tools Helped Improve Productivity (Accessibility-Related Examples)</h3>
+      <ul>
+        <li>
+          <strong>Faster Issue Diagnosis:</strong>
+          <br />
+          Instead of spending 30+ minutes on a single “invalid for attribute” warning, I described the warning to
+          ChatGPT and received a concise explanation within seconds: “Your <code>for</code> value must match the
+          <code>&lt;input id=…&gt;</code>. Ensure no CSS rules remove the input from the accessibility tree.” This
+          saved me at least 20 minutes per warning.
+        </li>
+        <li>
+          <strong>Automated Contrast Calculations:</strong>
+          <br />
+          When I needed to pick new link colors, I asked “Which hex color on a white background yields a contrast
+          ratio ≥ 4.5:1 and stays within my purple brand palette?” ChatGPT suggested several candidate hex codes.
+          By copying those suggestions directly into my CSS, I eliminated manual trial‐and‐error.
+        </li>
+        <li>
+          <strong>Inline CSS Snippets:</strong>
+          <br />
+          For the focus‐indicator fix, I asked explicitly “Provide a CSS rule for a focus ring that works on buttons,
+          links, and inputs in dark mode.” The AI returned a ready‐to‐use block that I dropped into my
+          <code>&lt;style&gt;</code> tag, giving me immediate feedback in browser DevTools.
+        </li>
+      </ul>
+
+      <h3>e. Insights Gained for Future Use of GenAI/MT in Professional Practice</h3>
+      <ul>
+        <li>
+          <strong>Accessibility as an Ongoing Process:</strong>
+          <br />
+          I learned that AI can accelerate identifying and fixing accessibility issues, but final validation always
+          requires manual re‐scanning and real‐user testing. In future projects, I will use GenAI as a “first pass” to
+          handle common WCAG pitfalls, then follow up with automated and human audits.
+        </li>
+        <li>
+          <strong>Prompt Precision Matters:</strong>
+          <br />
+          When I asked vague questions—such as “How do I fix focus issues?”—the responses were too broad. By specifying
+          “IBM Equal Access Checker flagged ‘Keyboard focus indicator not visible’ on my `.nav-links a`,” I obtained
+          laser‐focused guidance. Going forward, I will frame prompts around the exact tool output (e.g., audit tool
+          name + specific rule text).
+        </li>
+        <li>
+          <strong>Maintaining Design Integrity:</strong>
+          <br />
+          While AI may propose extreme contrast combinations, I realized I must always test proposed changes against
+          our brand palette. In future, I will ask GenAI to “suggest a color within this brand palette (#4C1D95,
+          #F5F5F5) that meets WCAG AA on white” rather than leaving the choice entirely to AI.
+        </li>
+        <li>
+          <strong>Ethical and Transparent Attribution:</strong>
+          <br />
+          Documenting AI usage fosters trust with stakeholders. I will continue to maintain a clear log of which parts
+          originated from AI and which were hand‐crafted. This transparency also sets a reproducible standard: if
+          another developer picks up the project, they know exactly where AI assistance was used.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 4. Integrity Statement -->
+  <details class="accordion-item">
+    <summary class="accordion-header">
+      4. Integrity Statement
+    </summary>
+    <div class="accordion-panel">
+      <p>
+        I affirm that all use of Generative AI and Machine Translation tools in this assessment has been conducted
+        in accordance with the GenAI and MT Usage Framework and the principles of academic integrity. I have:
+      </p>
+      <ul>
+        <li>Disclosed AI/MT usage explicitly in this document.</li>
+        <li>Critically evaluated, verified, and edited all AI‐generated content.</li>
+        <li>Maintained transparency regarding sources and provided appropriate attribution where AI assistance was used.</li>
+      </ul>
+      <p>
+        By following these guidelines, I confirm that the final submitted work represents an honest, responsible integration 
+        of AI tools alongside my own expertise.
+      </p>
+    </div>
+  </details>
+</section>
+</main>
+
+  <footer class="footer">
+    
+    <ul class="footer-links">
+      <li class="footer-item"><a href="About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="contect.html">Find Us</a></li>
+    </ul>
+    <p>&copy; 2025 GameWorld</p>
+  </footer>
+
+
+
+
+  <!--login-->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-btn" id="closeLogin">&times;</span>
+    <h2>Login to GameWorld</h2>
+<form id="loginForm">
+  <input type="text" id="loginEmail" placeholder="Email or Username" required />
+  <input type="password" id="loginPassword" placeholder="Password" required />
+  <div id="loginError" class="error-message"></div>
+  <label class="remember">
+    <input type="checkbox" /> Remember me
+  </label>
+  <button type="submit">Login</button>
+<p class="login-register-tip">
+  Don't have an account? <a href="register.html">Register</a>
+</p>
+</form>
+
+  </div>
+</div>
+
+
+
+
+
+  <nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">🏠</span>
+    <span class="mobile-nav__label">Home</span>
+  </a>
+  <div class="mobile-nav__item game-menu">
+    <button class="game-menu__trigger">
+      <span class="mobile-nav__icon">🎮</span>
+      <span class="mobile-nav__label">Games</span>
+    </button>
+    <ul class="game-menu__list">
+    <li><a href="game1.html">Single</a></li>
+      <li><a href="game2.html">Online</a></li>
+      <li><a href="game3.html">Mobile</a></li>
+    </ul>
+  </div>
+  <a href="community.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">💬</span>
+    <span class="mobile-nav__label">Community</span>
+  </a>
+  <a href="Download.html" class="mobile-nav__item">
+    <span class="mobile-nav__icon">⬇️</span>
+    <span class="mobile-nav__label">Download</span>
+  </a>
+
+</nav>
+  <script src="js/links.js"></script>
+  <script type="module" src="js/login.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/submitreview.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const authGroup = document.querySelector('.auth-group');
+  if (!authGroup) return;
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const username   = localStorage.getItem('username');
+  const avatar     = localStorage.getItem('avatar') || 'images/default-avatar.png';
+
+  if (isLoggedIn && username) {
+    authGroup.innerHTML = `
+      <div class="user-info" style="display:flex;align-items:center;gap:0.5rem">
+        <img src="${avatar}" alt="Avatar" style="width:32px;height:32px;border-radius:50%">
+        <span style="color:#f8fafc;">${username}</span>
+        <button id="logoutBtn" class="auth-link" style="background:none;border:none;color:#f8fafc;cursor:pointer;">Logout</button>
+      </div>
+    `;
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.reload();
+    });
+  }
+});
+</script>
+</body>
+</html>

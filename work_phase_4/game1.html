@@ -16,7 +16,15 @@
             rel="icon"
             type="image/x-icon"
             href="/work_phase_4/images/favicon-16x16.png"
-        /></head>
+        />
+        <style>
+    :focus-visible {
+      outline: 2px dashed #00f7ff;
+      outline-offset: 3px;
+    }
+    html { font-size: 100%; }
+    body { font-size: 1rem; }
+  </style></head>
         
   <header class="header">
     <div class="logo">
@@ -41,7 +49,9 @@
         <li class="nav-item"><a href="community.html">Community</a></li>
         <li class="nav-item"><a href="Download.html">Download</a></li>
         <li class="nav-item"><a href="About Us.html">About Us</a></li>
-        <li class="nav-item auth-group">
+        <li class="nav-item"><a href="Implementation Rationale.html">Implementation</a></li>
+       <li class="nav-item"><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+          <li class="nav-item auth-group">
           <a href="#" class="auth-link" id="openLogin">Login</a>
           <span class="divider">|</span>
           <a href="register.html" class="auth-link">Register</a>
@@ -96,45 +106,31 @@ fetch('game1.json')
 
 
 
-<section id="review-section">
-  <h2>Leave a Review</h2>
+    <section id="review-section">
+      <h2>Leave a Review</h2>
+      <form id="reviewForm" class="review-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" aria-required="true" />
+        </div>
 
-  <form id="reviewForm" class="review-form">
- 
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" name="name" id="name"/>
-    </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" aria-required="true" />
+        </div>
 
- 
-    <div class="form-group">
-      <label for="Email">Email</label>
-      <input type="email" name="email" id="email"/>
-    </div>
-
-    <div class="form-group">
-      <label for="text">Your Review</label>
-      <textarea name="message" id="message" placeholder="Write your thoughts about the game..." required></textarea>
-    </div>
+        <div class="form-group">
+          <label for="message">Your Review</label>
+          <textarea name="message" id="message" placeholder="Write your thoughts about the game..." required aria-required="true"></textarea>
+        </div>
 
 
-    <div class="form-group stars">
-      <label for="rating">How would you rate this game?</label>
-      <div class="star-rating">
-        <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
-        <input type="radio" name="rating" value="4" id="rate4"><label for="rate4">★</label>
-        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
-        <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
-        <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
-      </div>
-    </div>
+        <div class="form-group">
+          <button type="submit" class="submit-btn">Submit Review</button>
+        </div>
+      </form>
+    </section>
 
-  
-    <div class="form-group">
-      <button type="submit" class="submit-btn">Submit Review</button>
-    </div>
-  </form>
-</section>
 
 
 
@@ -155,10 +151,11 @@ fetch('game1.json')
 
   <footer class="footer">
     
-    <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
-      <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
-      <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
-    
+    <ul class="footer-links">
+      <li class="footer-item"><a href="About Us.html">About Us</a></li>
+      <li class="footer-item"><a href="contect.html">Find Us</a></li>
+    </ul>
+    <p>&copy; 2025 GameWorld</p>
   </footer>
 
 

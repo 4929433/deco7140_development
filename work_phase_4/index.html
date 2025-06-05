@@ -11,6 +11,24 @@
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/card.css" />
   <link rel="icon" type="image/x-icon" href="images/favicon-16x16.png" />
+    <style>
+    :focus-visible {
+      outline: 2px dashed #00f7ff;
+      outline-offset: 3px;
+    }
+
+    html {
+      font-size: 100%; /* allow user scaling */
+    }
+    body {
+      font-size: 1rem;
+    }
+    @media (forced-colors: active) {
+      .hero__overlay {
+        background: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -37,7 +55,9 @@
         <li class="nav-item"><a href="community.html">Community</a></li>
         <li class="nav-item"><a href="Download.html">Download</a></li>
         <li class="nav-item"><a href="About Us.html">About Us</a></li>
-        <li class="nav-item auth-group">
+        <li class="nav-item"><a href="Implementation Rationale.html">Implementation</a></li>
+        <li class="nav-item"><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+          <li class="nav-item auth-group">
           <a href="#" class="auth-link" id="openLogin">Login</a>
           <span class="divider">|</span>
           <a href="register.html" class="auth-link">Register</a>
@@ -199,52 +219,50 @@
 
   </main>
 
-  <footer class="footer">
+<footer class="footer">
+  
+  <ul class="footer-links">
     
-    <ul class="footer-links"><p>&copy; 2025 GameWorld</p>
-      <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
-      <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
-    
-  </footer>
+    <li class="footer-item"><a href="/work_phase_4/About Us.html">About Us</a></li>
+    <li class="footer-item"><a href="/work_phase_4/contect.html">Find Us</a></li>
+  </ul>
+  <p>&copy; 2025 GameWorld</p>
+</footer>
 
  
-  <div id="loginModal" class="modal-overlay">
-    <div class="modal-content">
-      <span class="close-btn" id="closeLogin">&times;</span>
-      <h2>Login to GameWorld</h2>
-      <form id="loginForm">
-        <input
-          type="text"
-          id="loginEmail"
-          placeholder="Email or Username"
-          required
-          autocomplete="username"
-        />
-        <input
-          type="password"
-          id="loginPassword"
-          placeholder="Password"
-          required
-          autocomplete="current-password"
-        />
-        <div id="loginError" class="error-message"></div>
-        <label class="remember">
-          <input type="checkbox" /> Remember me
-        </label>
-        <button type="submit">Login</button>
-        <p class="login-register-tip">
-          Don't have an account? <a href="register.html">Register</a>
-        </p>
-      </form>
-    </div>
+ <div id="loginModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="modal-content">
+    <button class="close-btn" id="closeLogin" aria-label="Close login modal">&times;</button>
+    <h2 id="loginTitle">Login to GameWorld</h2>
+    <form id="loginForm">
+      <input
+        type="text"
+        id="loginEmail"
+        placeholder="Email or Username"
+        required
+        autocomplete="username"
+      />
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Password"
+        required
+        autocomplete="current-password"
+      />
+      <div id="loginError" class="error-message"></div>
+      <label class="remember">
+        <input type="checkbox" /> Remember me
+      </label>
+      <button type="submit">Login</button>
+      <p class="login-register-tip">
+        Don't have an account? <a href="register.html">Register</a>
+      </p>
+    </form>
   </div>
+</div>
 
 
 
-  <script src="js/links.js" defer></script>
-  <script type="module" src="js/login.js" defer></script>
-  <script type="module" src="js/auth.js" defer></script>
-  <script type="module" src="js/filter.js" defer></script>
 
  
 
@@ -280,27 +298,52 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const authGroup = document.querySelector('.auth-group');
-  if (!authGroup) return;
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  const username   = localStorage.getItem('username');
-  const avatar     = localStorage.getItem('avatar') || 'images/default-avatar.png';
+  if (authGroup) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const username = localStorage.getItem('username');
+    const avatar = localStorage.getItem('avatar') || 'images/default-avatar.png';
 
-  if (isLoggedIn && username) {
-    authGroup.innerHTML = `
-      <div class="user-info" style="display:flex;align-items:center;gap:0.5rem">
-        <img src="${avatar}" alt="Avatar" style="width:32px;height:32px;border-radius:50%">
-        <span style="color:#f8fafc;">${username}</span>
-        <button id="logoutBtn" class="auth-link" style="background:none;border:none;color:#f8fafc;cursor:pointer;">Logout</button>
-      </div>
-    `;
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.clear();
-      window.location.reload();
-    });
+    if (isLoggedIn && username) {
+      authGroup.innerHTML = `
+        <div class="user-info" style="display:flex;align-items:center;gap:0.5rem">
+          <img src="${avatar}" alt="Avatar" style="width:32px;height:32px;border-radius:50%">
+          <span style="color:#f8fafc;">${username}</span>
+          <button id="logoutBtn" class="auth-link" style="background:none;border:none;color:#f8fafc;cursor:pointer;">Logout</button>
+        </div>
+      `;
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        localStorage.clear();
+        window.location.reload();
+      });
+    }
   }
+
+  const loginModal = document.getElementById('loginModal');
+  const openLogin = document.getElementById('openLogin');
+  const closeLogin = document.getElementById('closeLogin');
+
+  openLogin?.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginModal.style.display = 'block';
+    document.getElementById('loginEmail')?.focus();
+  });
+
+  closeLogin?.addEventListener('click', () => {
+    loginModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === loginModal) {
+      loginModal.style.display = 'none';
+    }
+  });
 });
 </script>
 
+<script src="js/links.js" defer></script>
+<script type="module" src="js/login.js" defer></script>
+<script type="module" src="js/auth.js" defer></script>
+<script type="module" src="js/filter.js" defer></script>
 
 </body>
 </html>
